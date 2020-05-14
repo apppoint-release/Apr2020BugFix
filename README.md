@@ -1,29 +1,25 @@
-# README #
+Customer Release
+=====================
 
-This README would normally document whatever steps are necessary to get your application up and running.
+# Setup Instructions
+## GitHub and Git Tools
 
-### What is this repository for? ###
+* Install Git Bash or Source Tree on your local machine.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## Cloning Repository
 
-### How do I get set up? ###
+* Navigate to GitHub online and to the right repository.
+* Click clone and use https option.
+* Copy the URL and open Source Tree on your local machine.
+* Clone the repository to your local folder.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+## BizAPP Installation
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Make sure that old BizAPP build is uninstalled and no zombie services are running.
+* Remove the services that should have been uninstalled. 
+* Navigate to the repository in a command line and use powershell to run the scripts. 
+* In the command line, run the following commands. 
+**powershell** (shows the powershell window with a prompt PS>)       
+**.\Install.ps1** (If you want to setup services and iis to run as domain user account, then enter the inputs upon prompt)
+* Setup BizAPP configurations such as registry, web.config and config.config and start the services. 
+* IIS will point to repository\BizAPP\Webclient folder and can be run as windows user.
