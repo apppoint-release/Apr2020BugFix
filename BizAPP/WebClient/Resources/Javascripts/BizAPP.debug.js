@@ -13394,8 +13394,11 @@ BizAPP.UI.ReAuth = {
 		}
 	},
 	_options: null,
+	SubmitCallback: null,
 	SubmitVerificationCode: function () {
 		var options = BizAPP.UI.ReAuth._options
+		if (BizAPP.UI.ReAuth.SubmitCallback)
+			g_callBacks.push(BizAPP.UI.ReAuth.SubmitCallback);
 		ajaxAsyncCall('HelperEx', ['ReAuthenticate', options.chc, $('#reauthcode').val(), options.mode, options.type], false, true);
 	}
 }
