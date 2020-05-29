@@ -16,8 +16,7 @@ Config transformations are executed with the help of git hooks. Whenever there i
 exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\.git\hooks\post-commit.ps1"
 ```
    ### Powershell File
-   Copy the powershell file to .git\hook folder.
-   [post-commit.ps1](post-commit.ps1)
+   Copy [post-commit.ps1](post-commit.ps1) to .git\hook folder. Add additional snippets to transform other config files.
     
 ## Config Transformation
 BizAPP repository has a tool named "ctt.exe" under Tools folder which can be used to transform xdt based configurations.
