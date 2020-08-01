@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.Common.Serilog</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.SerilogInit">
+            <summary>
+            Class SerilogInit. Implements the <see cref="T:System.IDisposable"/>
+            </summary>
+            <seealso cref="T:System.IDisposable"/>
+        </member>
+        <member name="P:BizAPP.SerilogInit.Logger">
+            <summary>
+            Gets the logger.
+            </summary>
+            <value>
+            The logger.
+            </value>
+        </member>
+        <member name="M:BizAPP.SerilogInit.#ctor(System.String,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.SerilogInit"/> class.
+            </summary>
+            <param name="appName">Name of the application.</param>
+            <param name="args">The arguments.</param>
+            <exception cref="T:System.ArgumentNullException">appName</exception>
+            <exception cref="T:System.ArgumentNullException">appName</exception>
+        </member>
+        <member name="M:BizAPP.SerilogInit.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting
+            unmanaged resources.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+    </members>
+</doc>

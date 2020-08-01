@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.BizAPPOptions">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:BizAPP.BizAPPOptions.EnterpriseName">
+            <summary>
+            Gets or sets the name of the enterprise.
+            </summary>
+            <value>
+            The name of the enterprise.
+            </value>
+        </member>
+        <member name="P:BizAPP.BizAPPOptions.HostingAgentUri">
+            <summary>
+            Gets or sets the hosting agent URI.
+            </summary>
+            <value>
+            The hosting agent URI.
+            </value>
+        </member>
+        <member name="P:BizAPP.BizAPPOptions.RegistryUri">
+            <summary>
+            Gets or sets the registry URI.
+            </summary>
+            <value>
+            The registry URI.
+            </value>
+        </member>
+        <member name="P:BizAPP.BizAPPOptions.Tenancy">
+            <summary>
+            Gets or sets the tenancy.
+            </summary>
+            <value>
+            The tenancy.
+            </value>
+        </member>
+        <member name="P:BizAPP.BizAPPOptions.AdditionalLookupDirectories">
+            <summary>
+            Gets or sets the additional lookup directories.
+            </summary>
+            <value>
+            The additional lookup directories.
+            </value>
+        </member>
+        <member name="T:BizAPP.BizAPPTenantOptions">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.BizAPPTenantOptions.IgnoreDomainSegments">
+            <summary>
+            Gets or sets the tenancy ignore domain segments.
+            </summary>
+            <value>
+            The tenancy ignore domain segments.
+            </value>
+        </member>
+        <member name="T:BizAPP.Services.IQueryExecutionService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySPRaw(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the stored procedure.
+            </summary>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySP``1(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySPFirstOrDefault``1(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryRaw(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryFirstOrDefault``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query and returns list of values.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryScalar``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.ExecuteNonQuery(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Execute(System.Action{BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet})">
+            <summary>
+            Executes queries in transaction.
+            </summary>
+            <param name="tx">The tx.</param>
+        </member>
+        <member name="T:BizAPP.Services.ISessionServiceWrapperService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.Services.ISessionServiceWrapperService.Instance">
+            <summary>
+            Gets the session service.
+            </summary>
+            <value>
+            The session service.
+            </value>
+        </member>
+        <member name="T:BizAPP.Services.ITenantResolverService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BizAPP.Services.ITenantResolverService.ResolveCurrentRequestTenant">
+            <summary>
+            Resolves the current request tenant.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.ITenantResolverService.ResolveTenant(System.Uri)">
+            <summary>
+            Resolves the tenant.
+            </summary>
+            <param name="requestUrl">The request URL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.ITenantResolverService.ResolveTenant(System.Int32)">
+            <summary>
+            Resolves the tenant.
+            </summary>
+            <param name="tenantId">The tenant identifier.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

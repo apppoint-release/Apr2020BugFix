@@ -1,0 +1,670 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.System.WebAPI.Builder</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.CodeGenerator.CodeGenerator">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.CodeGenerator.CodeGenerator.CODEGEN_TEMPLATE">
+            <summary>
+            The codegen template
+            </summary>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.CodeGenerator.Generate(BizAPP.WebAPI.Codegen.Models.Application)">
+            <summary>
+            Generates the specified application.
+            </summary>
+            <param name="application">The application.</param>
+        </member>
+        <member name="T:BizAPP.CodeGenerator.TemplateExtensions">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.TemplateExtensions.SanitizeName(System.String)">
+            <summary>
+            Sanitizes the name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="F:BizAPP.CodeGenerator.TemplateExtensions.SANITIZE_NAME">
+            <summary>
+            The sanitize name expression
+            </summary>
+        </member>
+        <member name="T:BizAPP.CodeGenerator.Builder.SourceOutput">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.SourceOutput.Source">
+            <summary>
+            Gets or sets the source.
+            </summary>
+            <value>
+            The source.
+            </value>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.SourceOutput.References">
+            <summary>
+            Gets or sets the references.
+            </summary>
+            <value>
+            The references.
+            </value>
+        </member>
+        <member name="T:BizAPP.CodeGenerator.Builder.CompilationOptions">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.CompilationOptions.Source">
+            <summary>
+            Gets or sets the source.
+            </summary>
+            <value>
+            The source.
+            </value>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.CompilationOptions.DefaultReferences">
+            <summary>
+            Gets or sets the default references.
+            </summary>
+            <value>
+            The default references.
+            </value>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.CompilationOptions.AssemblyLookupPath">
+            <summary>
+            Gets or sets the assembly lookup path.
+            </summary>
+            <value>
+            The assembly lookup path.
+            </value>
+        </member>
+        <member name="T:BizAPP.CodeGenerator.Builder.CompilationOutput">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.CompilationOutput.Errors">
+            <summary>
+            Gets or sets the errors.
+            </summary>
+            <value>
+            The errors.
+            </value>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.CompilationOutput.AssemblyPath">
+            <summary>
+            Gets or sets the assembly path.
+            </summary>
+            <value>
+            The assembly path.
+            </value>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.CompilationOutput.PDBPath">
+            <summary>
+            Gets or sets the PDB path.
+            </summary>
+            <value>
+            The PDB path.
+            </value>
+        </member>
+        <member name="P:BizAPP.CodeGenerator.Builder.CompilationOutput.DOCPath">
+            <summary>
+            Gets or sets the document path.
+            </summary>
+            <value>
+            The document path.
+            </value>
+        </member>
+        <member name="T:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration._applicationDefinition">
+            <summary>
+            The application definition
+            </summary>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration.WithApplicationDefinition(BizAPP.WebAPI.Codegen.Models.Application)">
+            <summary>
+            Withes the application definition.
+            </summary>
+            <param name="applicationDefinition">The application definition.</param>
+            <returns></returns>
+        </member>
+        <member name="F:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration._additionalReferences">
+            <summary>
+            The additional references
+            </summary>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration.WithAdditionalReferences(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Withes the additional references.
+            </summary>
+            <param name="additionalReferences">The additional references.</param>
+            <returns></returns>
+        </member>
+        <member name="F:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration._assemblyLookupPaths">
+            <summary>
+            The assembly lookup path
+            </summary>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration.WithAssemblyLookupPaths(System.String[])">
+            <summary>
+            Withes the assembly lookup paths.
+            </summary>
+            <param name="assemblyLookupPaths">The assembly lookup paths.</param>
+            <returns></returns>
+        </member>
+        <member name="F:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration._assemblyOutputPath">
+            <summary>
+            The assembly output path
+            </summary>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration.WithAssemblyOutputPath(System.String)">
+            <summary>
+            Withes the assembl output path.
+            </summary>
+            <param name="assemblyOutputPath">The assembly output path.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration.Build">
+            <summary>
+            Builds this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.CodeGenerator.Builder.PackageBuilder">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.CodeGenerator.Builder.PackageBuilder._packageConfiguration">
+            <summary>
+            The package configuration
+            </summary>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilder.#ctor(BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.CodeGenerator.Builder.PackageBuilder" /> class.
+            </summary>
+            <param name="packageConfiguration">The package configuration.</param>
+            <exception cref="T:System.ArgumentNullException">packageConfiguration</exception>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilder.GenerateSource">
+            <summary>
+            Generates the source.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilder.GenerateSourceAndCompileToAssembly">
+            <summary>
+            Generates the source and compiles to assembly.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilder.ParseCSCode(BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration,BizAPP.CodeGenerator.Builder.SourceOutput)">
+            <summary>
+            Parses the CS code.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <param name="sourceOptions">The source options.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilder.AddReferences(System.Collections.Generic.IList{Microsoft.CodeAnalysis.MetadataReference},System.String[],System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Adds the references.
+            </summary>
+            <param name="masterReferences">The references.</param>
+            <param name="assemblyLookupPaths">The assembly lookup paths.</param>
+            <param name="assemblyReferences">The assembly references.</param>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.Application">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Application.id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Application.name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Application.description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Application.routetemplate">
+            <summary>
+            Gets or sets the routetemplate.
+            </summary>
+            <value>
+            The routetemplate.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Application.versions">
+            <summary>
+            Gets or sets the versions.
+            </summary>
+            <value>
+            The versions.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Application.authorization">
+            <summary>
+            Gets or sets the authorization.
+            </summary>
+            <value>
+            The authorization.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Application.hash">
+            <summary>
+            Gets or sets the hash.
+            </summary>
+            <value>
+            The hash.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.AuthorizationType">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.AuthorizationType.anonymous">
+            <summary>
+            The anonymous
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.AuthorizationType.authorize">
+            <summary>
+            The authorize
+            </summary>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.Authorization">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Authorization.authorization">
+            <summary>
+            Gets or sets the authorization.
+            </summary>
+            <value>
+            The authorization.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Authorization.requiredresponsibilities">
+            <summary>
+            Gets or sets the requiredresponsibilities.
+            </summary>
+            <value>
+            The requiredresponsibilities.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.Version">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Version.name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Version.routetemplate">
+            <summary>
+            Gets or sets the routetemplate.
+            </summary>
+            <value>
+            The routetemplate.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Version.endpoints">
+            <summary>
+            Gets or sets the endpoints.
+            </summary>
+            <value>
+            The endpoints.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.HttpMethodType">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.HttpMethodType.get">
+            <summary>
+            The get
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.HttpMethodType.put">
+            <summary>
+            The put
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.HttpMethodType.post">
+            <summary>
+            The post
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.HttpMethodType.delete">
+            <summary>
+            The delete
+            </summary>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.EndPoint">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPoint.name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPoint.httpmethod">
+            <summary>
+            Gets or sets the httpmethod.
+            </summary>
+            <value>
+            The httpmethod.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPoint.routetemplate">
+            <summary>
+            Gets or sets the routetemplate.
+            </summary>
+            <value>
+            The routetemplate.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPoint.authorization">
+            <summary>
+            Gets or sets the authorization.
+            </summary>
+            <value>
+            The authorization.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPoint.handler">
+            <summary>
+            Gets or sets the handler.
+            </summary>
+            <value>
+            The handler.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPoint.inparameters">
+            <summary>
+            Gets or sets the inparameters.
+            </summary>
+            <value>
+            The inparameters.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.InParameterType">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.InParameterType.routetemplate">
+            <summary>
+            The routetemplate
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.InParameterType.fromservices">
+            <summary>
+            The fromservices
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.InParameterType.frombody">
+            <summary>
+            The frombody
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.InParameterType.fromquery">
+            <summary>
+            The fromquery
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.InParameterType.fromheader">
+            <summary>
+            The fromheader
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.InParameterType.fromform">
+            <summary>
+            The fromform
+            </summary>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.InParameter">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.InParameter.type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.InParameter.datatype">
+            <summary>
+            Gets or sets the datatype.
+            </summary>
+            <value>
+            The datatype.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.InParameter.datatypedefinition">
+            <summary>
+            Gets or sets the datatypedefinition.
+            </summary>
+            <value>
+            The datatypedefinition.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.InParameter.name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.EndPointHandlerType">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.EndPointHandlerType.query">
+            <summary>
+            The query
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.EndPointHandlerType.methodsnippet">
+            <summary>
+            The methodsnippet
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.EndPointHandlerType.method">
+            <summary>
+            The method
+            </summary>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.EndPointHandler">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPointHandler.type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPointHandler.data">
+            <summary>
+            Gets or sets the data.
+            </summary>
+            <value>
+            The data.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.EndPointHandlerQuery">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPointHandlerQuery.queryid">
+            <summary>
+            Gets or sets the queryid.
+            </summary>
+            <value>
+            The queryid.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodLanguages">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodLanguages.csharp">
+            <summary>
+            The csharp
+            </summary>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodBase">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodBase.language">
+            <summary>
+            Gets or sets the language.
+            </summary>
+            <value>
+            The language.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodBase.code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodBase.references">
+            <summary>
+            Gets or sets the references.
+            </summary>
+            <value>
+            The references.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodBase.imports">
+            <summary>
+            Gets or sets the imports.
+            </summary>
+            <value>
+            The imports.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodSnippet">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodBase" />
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethod">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:BizAPP.WebAPI.Codegen.Models.EndPointHandlerMethodBase" />
+        </member>
+        <member name="T:BizAPP.WebAPI.Codegen.Models.IntStringEnumConverter">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Newtonsoft.Json.Converters.StringEnumConverter" />
+        </member>
+        <member name="M:BizAPP.WebAPI.Codegen.Models.IntStringEnumConverter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.Codegen.Models.IntStringEnumConverter" /> class.
+            </summary>
+        </member>
+        <member name="T:BizAPP.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BizAPP.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BizAPP.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:BizAPP.Properties.Resources.CodeGenerator_Template">
+             <summary>
+               Looks up a localized string similar to using System;
+            using System.Collections;
+            using System.Linq;
+            using System.Data;
+            using BizAPP.WebAPI;
+            using BizAPP.Services;
+            using Identity.BizAPP;
+            using Microsoft.AspNetCore.Authorization;
+            using Microsoft.AspNetCore.Identity;
+            using Microsoft.AspNetCore.Mvc;
+            using Microsoft.Extensions.Logging;
+            using Newtonsoft.Json;
+            using Newtonsoft.Json.Linq;
+            
+            {{for version in versions}}
+            {{for endpoint in version.endpoints}}
+            {{if (endpoint.handler.data.imports) }}
+            {{for reference in endpoint.handl [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+    </members>
+</doc>

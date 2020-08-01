@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.InProcService.Test</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.Services.Test.TestService">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:BizAPP.Services.Test.ITestService" />
+        </member>
+        <member name="F:BizAPP.Services.Test.TestService._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:BizAPP.Services.Test.TestService._cc">
+            <summary>
+            The cc
+            </summary>
+        </member>
+        <member name="F:BizAPP.Services.Test.TestService._ss">
+            <summary>
+            The ss
+            </summary>
+        </member>
+        <member name="M:BizAPP.Services.Test.TestService.#ctor(Microsoft.Extensions.Logging.ILogger{BizAPP.Services.Test.ITestService},Orleans.IClusterClient,BizAPP.Services.ISessionServiceWrapperService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Services.Test.TestService" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="cc">The cc.</param>
+            <param name="ss">The ss.</param>
+        </member>
+        <member name="M:BizAPP.Services.Test.TestService.BizAPP#Services#Test#ITestService#GetEnvironmentInfo">
+            <summary>
+            Gets the environment information.
+            </summary>
+            <returns>
+            Task&lt;System.String&gt;.
+            </returns>
+        </member>
+    </members>
+</doc>

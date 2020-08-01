@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.Common.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.ConfigurationUtils">
+            <summary>
+            Class ConfigurationUtils.
+            </summary>
+        </member>
+        <member name="M:BizAPP.ConfigurationUtils.GetDefaultConfiguration(System.String,System.String[])">
+            <summary>
+            Gets the default configuration.
+            </summary>
+            <param name="basePath">The base path.</param>
+            <param name="args">The arguments.</param>
+            <returns>IConfigurationRoot.</returns>
+        </member>
+        <member name="M:BizAPP.ConfigurationUtils.ConfigureDefaultConfiguration(Microsoft.Extensions.Configuration.IConfigurationBuilder,System.String,System.String[])">
+            <summary>
+            Configures the default configuration.
+            </summary>
+            <param name="options">The options.</param>
+            <param name="basePath">The base path.</param>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

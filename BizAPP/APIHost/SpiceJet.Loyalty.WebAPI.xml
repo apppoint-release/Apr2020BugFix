@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SpiceJet.Loyalty.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:SpiceJet.Loyalty.LoyaltyMgmtVNextController">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:SpiceJet.Loyalty.LoyaltyMgmtVNextController._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SpiceJet.Loyalty.LoyaltyMgmtVNextController" /> class.
+            </summary>
+            <param name="loggerFactory">The logger factory.</param>
+        </member>
+        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.GetVersion">
+            <summary>
+            Login
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.ControllerExtensions">
+            <summary>
+            Class ControllerExtensions.
+            </summary>
+        </member>
+        <member name="M:BizAPP.ControllerExtensions.Json(Microsoft.AspNetCore.Mvc.ControllerBase,System.String)">
+            <summary>
+            Returns Json content.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="json">The json.</param>
+            <returns>Microsoft.AspNetCore.Mvc.ActionResult.</returns>
+        </member>
+        <member name="M:BizAPP.ControllerExtensions.Json(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
+            <summary>
+            Returns Json content.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="json">The json.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.Utils.TokenUtils">
+            <summary>
+            Class TokenUtils.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Utils.TokenUtils.GenerateRefreshTokenBytes">
+            <summary>
+            Generates the refresh bytes.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Utils.TokenUtils.GenerateJwtToken(BizAPP.WebAPI.JWTOptions,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+            <summary>
+            Generates the JWT token.
+            </summary>
+            <param name="jwtOptions">The JWT options.</param>
+            <param name="claims">The claims.</param>
+            <returns>Task&lt;System.ValueTuple&lt;System.String, DateTime&gt;&gt;.</returns>
+        </member>
+    </members>
+</doc>

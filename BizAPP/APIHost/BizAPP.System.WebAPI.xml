@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.System.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.WebAPI.Host.AccountController">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Host.AccountController._jwtOptions">
+            <summary>
+            The JWT options
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Host.AccountController._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.AccountController.#ctor(BizAPP.WebAPI.JWTOptions,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.Host.DiagnosticsController" /> class.
+            </summary>
+            <param name="jWTOptions">The j wt options.</param>
+            <param name="loggerFactory">The logger factory.</param>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.AccountController.Login(BizAPP.Services.ISignInManager,BizAPP.WebAPI.LoginModel)">
+            <summary>
+            Login
+            </summary>
+            <param name="signIn">The sign in.</param>
+            <param name="loginModel">The lm.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.AccountController.GetCurrentUserInfo(Microsoft.AspNetCore.Identity.UserManager{Identity.BizAPP.User})">
+            <summary>
+            Gets the current user information.
+            </summary>
+            <param name="userManager">The user manager.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.DiagnosticsController">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:BizAPP.WebAPI.Host.DiagnosticsController._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.DiagnosticsController.#ctor(Microsoft.Extensions.Logging.ILogger{BizAPP.WebAPI.Host.DiagnosticsController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.Host.DiagnosticsController" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.DiagnosticsController.GetSessionConfiguration(BizAPP.Services.ISessionServiceWrapperService)">
+            <summary>
+            Gets the session configuration.
+            </summary>
+            <param name="_sessionService">The session service.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.DiagnosticsController.DoOutProcTest(BizAPP.Services.Test.ITestService)">
+            <summary>
+            Does the out proc test.
+            </summary>
+            <param name="ts">The ts.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.DiagnosticsController.GetNotificationTestState(BizAPP.Services.ISessionServiceWrapperService,Orleans.IClusterClient,System.String)">
+            <summary>
+            Gets the state of the notification test.
+            </summary>
+            <param name="_ssws">The SSWS.</param>
+            <param name="_cc">The cc.</param>
+            <param name="notificationId">The notification identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.DiagnosticsController.DoNotificationTest(BizAPP.Services.ISessionServiceWrapperService,Orleans.IClusterClient,System.String)">
+            <summary>
+            Does the notification test.
+            </summary>
+            <param name="_ssws">The SSWS.</param>
+            <param name="_cc">The cc.</param>
+            <param name="notificationId">The notification identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.DiagnosticsController.DoGetUsersOutProc(BizAPP.Services.ISessionServiceWrapperService,Orleans.IClusterClient,System.String)">
+            <summary>
+            Does the notification test.
+            </summary>
+            <param name="_ssws">The SSWS.</param>
+            <param name="_cc">The cc.</param>
+            <param name="requestId">The request identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.Controllers.MetadataController">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.Controllers.MetadataController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.Host.Controllers.MetadataController"/> class.
+            </summary>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef.uniqueid">
+            <summary>
+            Gets or sets the uniqueid.
+            </summary>
+            <value>
+            The uniqueid.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef.name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef.targettype">
+            <summary>
+            Gets or sets the targettype.
+            </summary>
+            <value>
+            The targettype.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef.viewdef">
+            <summary>
+            Gets or sets the viewdef.
+            </summary>
+            <value>
+            The viewdef.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef.layoutdef">
+            <summary>
+            Gets or sets the layoutdef.
+            </summary>
+            <value>
+            The layoutdef.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef.description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef.helpcontent">
+            <summary>
+            Gets or sets the helpcontent.
+            </summary>
+            <value>
+            The helpcontent.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef.active">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:BizAPP.WebAPI.Host.Controllers.MetadataController.ViewDef"/> is active.
+            </summary>
+            <value>
+              <c>true</c> if active; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.Controllers.MetadataController.GetViewById(BizAPP.Services.IQueryExecutionService,System.String)">
+            <summary>
+            Gets the view by identifier.
+            </summary>
+            <param name="qes">The qes.</param>
+            <param name="eid">The eid.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.ControllerExtensions">
+            <summary>
+            Class ControllerExtensions.
+            </summary>
+        </member>
+        <member name="M:BizAPP.ControllerExtensions.Json(Microsoft.AspNetCore.Mvc.ControllerBase,System.String)">
+            <summary>
+            Returns Json content.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="json">The json.</param>
+            <returns>Microsoft.AspNetCore.Mvc.ActionResult.</returns>
+        </member>
+        <member name="M:BizAPP.ControllerExtensions.Json(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
+            <summary>
+            Returns Json content.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="json">The json.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.Utils.TokenUtils">
+            <summary>
+            Class TokenUtils.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Utils.TokenUtils.GenerateRefreshTokenBytes">
+            <summary>
+            Generates the refresh bytes.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Utils.TokenUtils.GenerateJwtToken(BizAPP.WebAPI.JWTOptions,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+            <summary>
+            Generates the JWT token.
+            </summary>
+            <param name="jwtOptions">The JWT options.</param>
+            <param name="claims">The claims.</param>
+            <returns>Task&lt;System.ValueTuple&lt;System.String, DateTime&gt;&gt;.</returns>
+        </member>
+    </members>
+</doc>

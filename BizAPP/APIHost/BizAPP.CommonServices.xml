@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.CommonServices</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.BizAPPExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.BizAPPExtensions.AddBizAPP(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger,System.Boolean)">
+            <summary>
+            Bootstrap BizAPP.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+            <param name="logger">The logger.</param>
+            <param name="enableDistributedClient">if set to <c>true</c> [enable distributed client].</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.BizAPPExtensions.WithBizAPP(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger,System.Boolean)">
+            <summary>
+            Bootstrap BizAPP.
+            </summary>
+            <param name="services">The container.</param>
+            <param name="configuration">The configuration.</param>
+            <param name="logger">The logger.</param>
+            <param name="enableDistributedClient">if set to <c>true</c> [enable distributed client].</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">BizAPP section is missing in the configuration</exception>
+            <exception cref="T:System.Exception">BizAPP section is missing in the configuration</exception>
+        </member>
+        <member name="T:BizAPP.Services.QueryExecutionService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.#ctor(BizAPP.Services.ISessionServiceWrapperService,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Services.TenantResolverService" /> class.
+            </summary>
+            <param name="sessionServiceWrapperService">The session service wrapper service.</param>
+            <param name="loggerFactory">The logger factory.</param>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.System#IDisposable#Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#QuerySPRaw(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the sp.
+            </summary>
+            <param name="SPName">The sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#QuerySPFirstOrDefault``1(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the sp.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#QuerySP``1(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the sp.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.InternalQuerySPRaw(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            helper for query sp raw.
+            </summary>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#QueryRaw(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#QueryFirstOrDefault``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#Query``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#QueryScalar``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#ExecuteNonQuery(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.QueryExecutionService.BizAPP#Services#IQueryExecutionService#Execute(System.Action{BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet})">
+            <summary>
+            Executes the specified callback with a transaction.
+            </summary>
+            <param name="txcallback">The txcallback.</param>
+        </member>
+        <member name="T:BizAPP.Services.SessionServiceWrapperService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BizAPP.Services.SessionServiceWrapperService.#ctor(BizAPP.Services.ITenantResolverService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Services.TenantResolverService" /> class.
+            </summary>
+            <param name="tenantResolverService">The tenant resolver service.</param>
+        </member>
+        <member name="P:BizAPP.Services.SessionServiceWrapperService.BizAPP#Services#ISessionServiceWrapperService#Instance">
+            <summary>
+            Gets the session service.
+            </summary>
+            <value>
+            The session service.
+            </value>
+        </member>
+        <member name="M:BizAPP.Services.SessionServiceWrapperService.System#IDisposable#Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:BizAPP.Services.TenantResolverService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:BizAPP.Services.TenantResolverService._sp">
+            <summary>
+            The sp
+            </summary>
+        </member>
+        <member name="F:BizAPP.Services.TenantResolverService._runtimeBootstrap">
+            <summary>
+            The runtime bootstrap
+            </summary>
+        </member>
+        <member name="F:BizAPP.Services.TenantResolverService._bizAPPOptions">
+            <summary>
+            The biz application options
+            </summary>
+        </member>
+        <member name="F:BizAPP.Services.TenantResolverService._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:BizAPP.Services.TenantResolverService.#ctor(System.IServiceProvider,BizAPP.Runtime.Core.RuntimeBootstrap,BizAPP.BizAPPOptions,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Services.TenantResolverService" /> class.
+            </summary>
+            <param name="sp">The sp.</param>
+            <param name="runtimeBootstrap">The runtime bootstrap.</param>
+            <param name="bizAPPOptions">The biz application options.</param>
+            <param name="loggerFactory">The logger factory.</param>
+        </member>
+        <member name="M:BizAPP.Services.TenantResolverService.ResolveCurrentRequestTenant">
+            <summary>
+            Resolves the current request tenant.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.TenantResolverService.IsLocal(System.String)">
+            <summary>
+            Initializes the <see cref="T:BizAPP.Services.TenantResolverService" /> class.
+            </summary>
+            <param name="host">The host.</param>
+        </member>
+        <member name="M:BizAPP.Services.TenantResolverService.ResolveTenant(System.Uri)">
+            <summary>
+            Resolves the tenant given the url.
+            </summary>
+            <param name="requestUrl">The request URL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.TenantResolverService.ResolveTenant(System.Int32)">
+            <summary>
+            Resolves the tenant.
+            </summary>
+            <param name="tenantId">The tenant identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.TenantResolverService.ParseTenantDomainFromHost(System.String)">
+            <summary>
+            Parses the tenant domain from host.
+            </summary>
+            <param name="host">The host.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Unable to resolve to valid solution name from url - {requestUrl}
+            or
+            Unable to find valid tenant name in url - {requestUrl}</exception>
+        </member>
+        <member name="T:BizAPP.Services.ITenant">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="P:BizAPP.Services.ITenant.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="T:BizAPP.Services.TenantService">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.Services.TenantService.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Services.TenantService"/> class.
+            </summary>
+            <param name="tenantName">Name of the tenant.</param>
+        </member>
+        <member name="P:BizAPP.Services.TenantService.BizAPP#Services#ITenant#Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="M:BizAPP.Services.TenantService.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:BizAPP.DataReaderToPOCO">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.DataReaderToPOCO.ToPOCOList``1(System.Data.IDataReader)">
+            <summary>
+            Converts reader to POCO list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The reader.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.DataReaderToPOCO.InternalToPOCOList``1(System.Data.IDataReader,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Converts reader to POCO list.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The reader.</param>
+            <param name="logger">The logger.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.DataReaderToPOCO.ToPOCO``1(System.Data.IDataReader,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Converts to object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="reader">The rd.</param>
+            <param name="logger">The logger.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.ServiceProviderExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.ServiceProviderExtensions.GetService``1(System.IServiceProvider)">
+            <summary>
+            Gets the service.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sp">The sp.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ServiceProviderExtensions.GetRequiredService``1(System.IServiceProvider)">
+            <summary>
+            Gets the requried service.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sp">The sp.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Unable to get an instance of service type - {typeof( T )}</exception>
+        </member>
+        <member name="T:System.ServiceCollectionExtensions">
+            <summary>
+            Service extensions
+            </summary>
+        </member>
+        <member name="M:System.ServiceCollectionExtensions.AddBizAPPInProcServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Loads the InProc services.
+            </summary>
+            <param name="services">The collection.</param>
+            <param name="configuration">The configuration.</param>
+            <returns>
+            IServiceCollection.
+            </returns>
+        </member>
+        <member name="M:System.ServiceCollectionExtensions.AddBizAPPAlwaysOnServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Loads the InProc services.
+            </summary>
+            <param name="services">The collection.</param>
+            <param name="configuration">The configuration.</param>
+            <returns>IServiceCollection.</returns>
+        </member>
+        <member name="M:System.ServiceCollectionExtensions.AddBizAPPDefaultBasicServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the application services.
+            </summary>
+            <param name="services">The collection.</param>
+            <param name="configuration">The configuration.</param>
+            <returns>
+            IServiceCollection.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">configuration or collection</exception>
+        </member>
+        <member name="M:System.ServiceCollectionExtensions.AddBizAPPDefaultInProcServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the application services.
+            </summary>
+            <param name="services">The collection.</param>
+            <param name="configuration">The configuration.</param>
+            <returns>
+            IServiceCollection.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">configuration or collection</exception>
+        </member>
+        <member name="M:System.ServiceCollectionExtensions.ScanAndRegisterServices``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+            <summary>
+            Scans the and register services.
+            </summary>
+            <typeparam name="TInProc">The type of the t in proc.</typeparam>
+            <param name="services">The collection.</param>
+            <param name="configuration">The configuration.</param>
+            <param name="servicesConfigurationKey">The services configuration key.</param>
+            <param name="serviceLifeTime">The service life time.</param>
+            <returns>IServiceCollection.</returns>
+            <exception cref="T:System.ArgumentNullException">configuration or collection</exception>
+        </member>
+    </members>
+</doc>

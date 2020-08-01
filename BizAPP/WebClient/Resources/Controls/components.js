@@ -1,9 +1,9 @@
 let vueGrid = Vue.component('vueGrid', {
   template: `
-    <span class="span60">
+    <span>
       <div class="input-group theme1">
         <span v-if="!editing" class="text_node" @click="enableEditing">
-          <span style="width:80%">{{field.data.text}}</span>
+          <span style="width:60%;display:inline-block;overflow:hidden;text-overflow:ellipsis" :title="field.data.text">{{field.data.text}}</span>
           <span class="pull-right"><a class="i_edit" @click="enableEditing">&nbsp;<i class="fa fa-pencil"></i>&nbsp;</a></span>
         </span>
         <div v-else> 
@@ -38,6 +38,7 @@ let vueGrid = Vue.component('vueGrid', {
     },
     saveEdit: function(){
       this.field.data.text = this.tempValue;
+      this.field.data.newtext = this.tempValue;
       this.disableEditing();
     }
   }
@@ -45,15 +46,15 @@ let vueGrid = Vue.component('vueGrid', {
 
 let EditableText = Vue.component('editableText', {
   template: `
-    <span class="span60">
+    <span>
       <div class="input-group theme1">
         <span v-if="!editing" class="text_node" @click="enableEditing">
-          <span style="width:80%">{{field.data.text}}</span>
+          <span style="width:60%;display:inline-block;overflow:hidden;text-overflow:ellipsis" :title="field.data.text">{{field.data.text}}</span>
           <span class="pull-right"><a class="i_edit" @click="enableEditing">&nbsp;<i class="fa fa-pencil"></i>&nbsp;</a></span>
         </span>
         <div v-else> 
           <input v-model="tempValue" class="input" autofocus="true" v-on:keyup.enter="saveEdit()" style="width:80%;"/>
-          <span class="ibtn_container right">
+          <span class="ibtn_container">
             <a class="i_ok" @click="saveEdit"><span><i class="fa fa-check"></i></span></a>
             <a class="i_cancel" @click="disableEditing"><span><i class="fa fa-times"></i></span></a>
           </span>
@@ -289,9 +290,15 @@ var BizappComponents = {
             }
           })
           
-          if(self.selectedNodes.length){
+          if(!parentNode && self.selectedNodes.length){
             $.each(self.selectedNodes,function(i,n){
-              treeObj.unshift({data:n, state:{checked:true}})
+              var nodeObj = {data:n, state:{checked:true}}
+              if(!n.isLeaf){
+                nodeObj.state.expanded=false
+			          nodeObj.data.childrenLoaded=false
+                nodeObj.children=[{text: 'Loading...'}]
+              }
+              treeObj.unshift(nodeObj)
             })
           }
 
@@ -403,13 +410,14 @@ var BizappComponents = {
     
         handleMatchBehavior(nodeSearchStr, matchedNode) {
           // Is absolute match?
-          if(matchedNode.data.key.toLowerCase() === nodeSearchStr.toLowerCase() || matchedNode.data.text.toLowerCase() === nodeSearchStr.toLowerCase()) {
+          if(matchedNode.data.key.toLowerCase().endsWith(nodeSearchStr.toLowerCase()) || matchedNode.data.text.toLowerCase() === nodeSearchStr.toLowerCase()) {
             matchedNode.check()
           } else {
             matchedNode.select()
           }
-          var topPos = $(matchedNode.vm.$el)[0].offsetTop
-          this._scrollTo($('.navigation-tree')[0], topPos-30, 600);  
+          $(matchedNode.vm.$el).find('span')[0].scrollIntoView({behavior: "smooth", block: "center"});
+          //var topPos = $(matchedNode.vm.$el)[0].offsetTop
+          //this._scrollTo($('.navigation-tree')[0], topPos-30, 600);  
         },
 
         matchNodesInTree() {

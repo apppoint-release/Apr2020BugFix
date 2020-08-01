@@ -35,8 +35,8 @@
 							<i class="fas fa-spinner fa-pulse"></i>
 						</div>
 						<button v-if="!isSaved" type="button" class="btn" :style="widget.button.styles" :disabled="!isValidated || isSaving" @click="saveForm">Save</button>
-						<button v-if="!isSaved" type="button" class="btn btn-default" data-dismiss="modal" :disabled="isSaving">Cancel</button>
-						<button v-if="isSaved" type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+						<!--<button v-if="!isSaved" type="button" class="btn btn-default" data-dismiss="modal" :disabled="isSaving">Cancel</button>
+						<button v-if="isSaved" type="button" class="btn btn-success" data-dismiss="modal">Close</button>-->
 					</div>
 				</div>
 			</div>
@@ -57,6 +57,7 @@
 			'widgetid': String,
 			'widgetpostheaders': Array,
 			'widgetposition': String,
+			'additionalpostvalues': Array,
 		},
 
 		data() {
@@ -96,7 +97,7 @@
 			const addheaders = this.widgetpostheaders
 			if (addheaders) {
 				addheaders.forEach(function (header) {
-					const headername = header.header.toLowerCase()
+					const headername = header.name.toLowerCase()
 					let headervalue = header.value
 					if (headername == 'x-bizapp-typeid') {
 						headervalue = 'ESYSbkbzrense6e1vt8xj'
@@ -141,13 +142,21 @@
 
 			saveForm() {
 				const that = this
-				that.isSaving = true
 				const posturl = that.widget.post.url
 				const posttype = that.widget.post.type
 				const model = that.widget.form.model
+				const additionalvalues = this.additionalpostvalues
+
+				that.isSaving = true
 
 				let fetchPromise
 				if (posttype == 'JSON') {
+					if (additionalvalues) {
+						additionalvalues.forEach(function (nv) {
+							model[nv.name] = nv.value
+						})
+					}
+
 					fetchPromise = fetch(posturl, {
 						method: 'post',
 						body: JSON.stringify(model)
@@ -171,6 +180,12 @@
 						else {
 							formPost.append(fieldName, fieldValue)
 						}
+
+						if (additionalvalues) {
+							additionalvalues.forEach(function (nv) {
+								formPost.append(nv.name, nv.value)
+							})
+						}
 					})
 
 					var headers = new Headers();
@@ -181,10 +196,9 @@
 					const addheaders = that.widgetpostheaders
 					if (addheaders) {
 						addheaders.forEach(function (header) {
-							headers.append(header.header, header.value);
+							headers.append(header.name, header.value);
 						})
 					}
-
 
 					fetchPromise = fetch(posturl, {
 						method: 'POST',
@@ -216,12 +230,12 @@
 </script>
 <style>
 	.modal-open {
-		overflow: scroll;
+		overflow-y: auto;
 	}
 
 	.bzawidgetformmodal {
 		position: fixed !important;
-		z-index: 10040 !important;
+		z-index: 10 !important;
 		overflow-y: auto !important;
 	}
 
@@ -233,7 +247,7 @@
 		background: #0000FF;
 		color: #FFFFFF;
 		border-radius: 23px;
-		z-index: 10040 !important;
+		z-index: 10 !important;
 	}
 
 	.bzawidgetformmodal-top-left {
@@ -274,5 +288,21 @@
 	.bzawidgetbutton-bottom-right {
 		bottom: 10px;
 		right: 10px;
+	}
+
+	.vue-form-generator .form-group label {
+		display: none;
+	}
+
+	.vue-form-generator .form-group.error .errors {
+		display: none;
+	}
+
+	.vue-form-generator .form-group.error input:not([type=checkbox]), .form-group.error select, .form-group.error textarea {
+		background-color: unset !important;
+		border-top: unset !important;
+		border-bottom: unset !important;
+		border-right: unset !important;
+		border-left: 1px solid red !important;
 	}
 </style>

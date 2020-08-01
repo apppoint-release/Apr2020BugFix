@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.WebAPI.Host</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.WebAPI.Host.BizAPPExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.BizAPPExtensions.WithBizAPPSolutionParts(Microsoft.Extensions.DependencyInjection.IMvcBuilder,BizAPP.Runtime.Core.RuntimeBootstrap,BizAPP.BizAPPOptions,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Extend application solution parts.
+            </summary>
+            <param name="mvcBuilder">The MVC builder.</param>
+            <param name="rbs">The RBS.</param>
+            <param name="bzaOptions">The bza options.</param>
+            <param name="logger">The logger.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Unable to get tenant service for enterprise with name - {bzaOptions.EnterpriseName}</exception>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.BizAPPExtensions.GetSolutionPartsUsingMetadata(BizAPP.BizAPPOptions,System.String,BizAPP.Runtime.Core.RuntimeBootstrap,BizAPP.Runtime.Core.RuntimeContext,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Gets the solution parts using metadata.
+            </summary>
+            <param name="options">The options.</param>
+            <param name="enterpriseName">Name of the enterprise.</param>
+            <param name="rbs">The RBS.</param>
+            <param name="runtimeContext">The runtime context.</param>
+            <param name="logger">The logger.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.BizAPPExtensions.GetSolutionParts(BizAPP.BizAPPOptions,System.String,BizAPP.Runtime.Core.RuntimeContext,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Gets the solution parts.
+            </summary>
+            <param name="options">The options.</param>
+            <param name="enterpriseName">Name of the enterprise.</param>
+            <param name="runtimeContext">The runtime context.</param>
+            <param name="logger">The logger.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.BizAPPExtensions.GetSolutionPartsQuery">
+            <summary>
+            Gets the solution parts query.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.JWTExtensions">
+            <summary>
+            Class JWTExtensions.
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.JWTExtensions.AddJWTAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Adds the JWT authentication.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+            <param name="hostingEnvironment">The hosting environment.</param>
+            <param name="_logger">The logger.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.SwaggerDefaultValues">
+            <summary>
+            Represents the Swagger/Swashbuckle operation filter used to document the implicit API
+            version parameter. Implements the <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter"/>
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter"/>
+            <remarks>
+            This <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter"/> is only required due to bugs in the <see
+            cref="T:Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator"/>. Once they are fixed and published, this class can be removed.
+            </remarks>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.SwaggerDefaultValues.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the filter to the specified operation using the given context.
+            </summary>
+            <param name="operation">The operation to apply the filter to.</param>
+            <param name="context">The current operation filter context.</param>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.SwaggerAuthResponsesOperationFilter">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter" />
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.SwaggerAuthResponsesOperationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the specified operation.
+            </summary>
+            <param name="operation">The operation.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.SwaggerExtensions2">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.SwaggerExtensions2.WithSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Bootstrap BizAPP.
+            </summary>
+            <param name="services">The container.</param>
+            <param name="configuration">The configuration.</param>
+            <param name="hostingEnvironment">The hosting environment.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">BizAPP section is missing in the configuration</exception>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.SwaggerExtensions2.UseSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Uses the swagger.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="provider">The provider.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.Program">
+            <summary>
+            Class Program.
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.Program.CreateWebHostBuilder(System.String,System.String[])">
+            <summary>
+            Builds the web host.
+            </summary>
+            <param name="basePath">The base path.</param>
+            <param name="args">The arguments.</param>
+            <returns>
+            IWebHost.
+            </returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.Startup">
+            <summary>
+            Class Startup.
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.Host.Startup" /> class.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <param name="env">The env.</param>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>
+            The configuration.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Startup.HostingEnvironment">
+            <summary>
+            Gets the hosting environment.
+            </summary>
+            <value>
+            The hosting environment.
+            </value>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="provider">The provider.</param>
+        </member>
+        <member name="T:BizAPP.WebAPI.HostedServices.SampleLoggerHostedService">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Microsoft.Extensions.Hosting.IHostedService" />
+        </member>
+        <member name="M:BizAPP.WebAPI.HostedServices.SampleLoggerHostedService.#ctor(Microsoft.Extensions.Logging.ILogger{BizAPP.WebAPI.HostedServices.SampleLoggerHostedService})">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.HostedServices.SampleLoggerHostedService" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:BizAPP.WebAPI.HostedServices.SampleLoggerHostedService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Triggered when the application host is ready to start the service.
+            </summary>
+            <param name="cancellationToken">Indicates that the start process has been aborted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.HostedServices.SampleLoggerHostedService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Triggered when the application host is performing a graceful shutdown.
+            </summary>
+            <param name="cancellationToken">Indicates that the shutdown process should no longer be graceful.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

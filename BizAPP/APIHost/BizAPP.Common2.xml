@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.Common2</name>
+    </assembly>
+    <members>
+        <member name="T:System.DefaultExtensionUtils">
+            <summary>
+            Class ExtensionUtils.
+            </summary>
+        </member>
+        <member name="M:System.DefaultExtensionUtils.IsNullOrEmpty(System.String)">
+            <summary>
+            Determines whether the specified source string is null or empty.
+            </summary>
+            <param name="source">The source.</param>
+            <returns>
+            <c>true</c> if the specified source is null or empty string; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:System.DefaultExtensionUtils.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            Determines whether [is null or white space].
+            </summary>
+            <param name="source">The source.</param>
+            <returns>
+            <c>true</c> if [is null or white space] [the specified source]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:System.DefaultExtensionUtils.SafeTrim(System.String)">
+            <summary>
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.IdExtensions">
+            <summary>
+            Class IdExtensions.
+            </summary>
+        </member>
+        <member name="M:System.IdExtensions.ToFullyQualifiedName(System.String,System.Int32)">
+            <summary>
+            Converts to fullyqualifiedname.
+            </summary>
+            <param name="enterpriseId">The enterprise identifier.</param>
+            <param name="tenantId">The tenant identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.IdExtensions.ParseFullyQualifiedName(System.String,System.String@,System.Int32@)">
+            <summary>
+            Parses the name of the fully qualified.
+            </summary>
+            <param name="fullyQualifiedName">Name of the fully qualified.</param>
+            <param name="enterpriseId">The enterprise identifier.</param>
+            <param name="tenantId">The tenant identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.MailMessageUtils">
+            <summary>
+            Class MailMessageUtils.
+            </summary>
+        </member>
+        <member name="M:System.MailMessageUtils.AddAttachment(System.Net.Mail.MailMessage,System.String,System.String,System.String)">
+            <summary>
+            Adds the attachment and returns content id.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="name">The name.</param>
+            <param name="mediaType">Type of the media.</param>
+            <param name="base64EncodedContent">Content of the base64 encoded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.MailMessageUtils.GenerateStreamFromString(System.String)">
+            <summary>
+            Generates the stream from string.
+            </summary>
+            <param name="base64String">The base64 string.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.ObjectId">
+            <summary>
+            Class ObjectId.
+            </summary>
+        </member>
+        <member name="P:System.ObjectId.EnterpriseName">
+            <summary>
+            Gets or sets the name of the enterprise.
+            </summary>
+            <value>
+            The name of the enterprise.
+            </value>
+        </member>
+        <member name="P:System.ObjectId.TenantId">
+            <summary>
+            Gets or sets the tenant identifier.
+            </summary>
+            <value>
+            The tenant identifier.
+            </value>
+        </member>
+        <member name="P:System.ObjectId.UniqueId">
+            <summary>
+            Gets or sets the unique identifier.
+            </summary>
+            <value>
+            The unique identifier.
+            </value>
+        </member>
+        <member name="P:System.ObjectId.ObjectType">
+            <summary>
+            Gets or sets the type of the object.
+            </summary>
+            <value>
+            The type of the object.
+            </value>
+        </member>
+        <member name="M:System.ObjectId.ToString">
+            <summary>
+            Converts to fully qualified id.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:System.ObjectId.FromString(System.String)">
+            <summary>
+            Parses the fully qualified identifier.
+            </summary>
+            <param name="fullyQualifiedId">The fully qualified identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.RuntimeAssemblyResolver">
+            <summary>
+            Class ExtensionUtils.
+            </summary>
+        </member>
+        <member name="F:System.RuntimeAssemblyResolver._lookupDirectories">
+            <summary>
+            The lookup directories
+            </summary>
+        </member>
+        <member name="F:System.RuntimeAssemblyResolver._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:System.RuntimeAssemblyResolver.SetupAssemblyResolver(Serilog.ILogger,System.String)">
+            <summary>
+            Setups the assembly resolver.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="baseDirectory">The base directory.</param>
+        </member>
+        <member name="M:System.RuntimeAssemblyResolver.AssemblyResolve(System.Object,System.ResolveEventArgs)">
+            <summary>
+            Assemblies the resolve.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.ResolveEventArgs"/> instance containing the event data.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.Common.ExtensionUtils">
+            <summary>
+            Class ExtensionUtils.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.TryGetValueAs``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,``0@)">
+            <summary>
+            Tries to the get value as specified type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The source.</param>
+            <param name="name">The name.</param>
+            <param name="outValue">The out value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.WaitAndReturn2``1(System.Threading.Tasks.Task{``0})">
+            <summary>
+            Waits and returns the task result
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input">The input.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.FormatWith(System.String,System.Object)">
+            <summary>
+            Coalesces the specified inputs.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="arg0">The arg0.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.FormatWith(System.String,System.Object,System.Object)">
+            <summary>
+            Coalesces the specified inputs.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="arg0">The arg0.</param>
+            <param name="arg1">The arg1.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.FormatWith(System.String,System.Object[])">
+            <summary>
+            Formats the with.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="args">The arguments.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.Coalesce(System.String,System.String[])">
+            <summary>
+            Coalesces the specified inputs.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="inputs">The inputs.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.ForEach0``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            ForEach enumeration helper.
+            </summary>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <param name="source">The source.</param>
+            <param name="callback">The callback.</param>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.ForEach0``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            ForEach enumeration helper.
+            </summary>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <param name="source">The source.</param>
+            <param name="callback">The callback.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.ForEach1``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1,System.Boolean},``1)">
+            <summary>
+            ForEach enumeration helper.
+            </summary>
+            <typeparam name="T1">The type of the 1.</typeparam>
+            <typeparam name="T2">The type of the 2.</typeparam>
+            <param name="source">The source.</param>
+            <param name="callback">The callback.</param>
+            <param name="value2">The value2.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.CIEquals(System.String,System.String)">
+            <summary>
+            case insensitive equals.
+            </summary>
+            <param name="source1">The source1.</param>
+            <param name="source2">The source2.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.JoinWith(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Joins the strings with the specified character.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="joinWith">The join with.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Common.ExtensionUtils.SanitizeMailSubject(System.String)">
+            <summary>
+            Sanitizes the mail subject.
+            </summary>
+            <param name="subject">The subject.</param>
+            <returns>System.Nullable&lt;System.String&gt;.</returns>
+        </member>
+        <member name="T:BizAPP.Common.IdUtils">
+            <summary>
+            Class IdUtils.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Common.IdUtils.MakeEvent(System.String,System.String,System.String)">
+            <summary>
+            Makes the event string.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="operation">The operation.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Common.IdUtils.MakeId(System.String,System.String,System.Int32)">
+            <summary>
+            Makes the identifier string.
+            </summary>
+            <param name="schema">The schema.</param>
+            <param name="tableName">Name of the table.</param>
+            <param name="id">The identifier.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:BizAPP.Common.JSONUtils">
+            <summary>
+            Class JSONUtils.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Common.JSONUtils.ToJSON``1(``0)">
+            <summary>
+            Convert object to JSON
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The source.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Common.JSONUtils.ToDebugJSON``1(``0)">
+            <summary>
+            Convert object to JSON
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The source.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:BizAPP.Common.JSONUtils.ToObject``1(System.String)">
+            <summary>
+            Converts JSON to object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source">The source.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="F:BizAPP.Common.JSONUtils.m_debugSerializerSettings">
+            <summary>
+            The json document settings
+            </summary>
+        </member>
+        <member name="F:BizAPP.Common.JSONUtils.m_jsonSerializerSettings">
+            <summary>
+            The json serializer settings
+            </summary>
+        </member>
+        <member name="T:BizAPP.Common.PasswordGenerator">
+            <summary>
+            Class PasswordGenerator.
+            </summary>
+        </member>
+        <member name="F:BizAPP.Common.PasswordGenerator.Punctuations">
+            <summary>
+            The punctuations
+            </summary>
+        </member>
+        <member name="F:BizAPP.Common.PasswordGenerator.StartingChars">
+            <summary>
+            The starting chars
+            </summary>
+        </member>
+        <member name="M:BizAPP.Common.PasswordGenerator.GeneratePassword(System.Int32,System.Int32)">
+            <summary>
+            Generates a random password of the specified length.
+            </summary>
+            <param name="length">
+            The number of characters in the generated password. The length must be between 1 and 128 characters.
+            </param>
+            <param name="numberOfNonAlphanumericCharacters">
+            The minimum number of non-alphanumeric characters (such as @, #, !, %, &amp;, and so on)
+            in the generated password.
+            </param>
+            <returns>A random password of the specified length.</returns>
+            <exception cref="T:System.ArgumentException">
+            password_length_incorrect - length or min_required_non_alphanumeric_characters_incorrect
+            - numberOfNonAlphanumericCharacters
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            password_length_incorrect - length or min_required_non_alphanumeric_characters_incorrect
+            - numberOfNonAlphanumericCharacters
+            </exception>
+        </member>
+        <member name="M:BizAPP.Common.PasswordGenerator.IsDangerousString(System.String,System.Int32@)">
+            <summary>
+            Determines whether [is dangerous string] [the specified s].
+            </summary>
+            <param name="s">The s.</param>
+            <param name="matchIndex">Index of the match.</param>
+            <returns><c>true</c> if [is dangerous string] [the specified s]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:BizAPP.Common.PasswordGenerator.IsAtoZ(System.Char)">
+            <summary>
+            Determines whether [is ato z] [the specified c].
+            </summary>
+            <param name="c">The c.</param>
+            <returns><c>true</c> if [is ato z] [the specified c]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:BizAPP.Common.PathUtils">
+            <summary>
+            Class PathUtils.
+            </summary>
+        </member>
+        <member name="F:BizAPP.Common.PathUtils.BASEPATH">
+            <summary>
+            The entrylocation
+            </summary>
+        </member>
+        <member name="F:BizAPP.Common.PathUtils.CONTENTROOT">
+            <summary>
+            The contentroot
+            </summary>
+        </member>
+        <member name="M:BizAPP.Common.PathUtils.ToFullPath(System.String)">
+            <summary>
+            Resolves the full path.
+            </summary>
+            <param name="relativeOrAbsolutePath">The relative or absolute path.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:BizAPP.Common.StreamUtils">
+            <summary>
+            Class StreamUtils.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Common.StreamUtils.CopyToMemoryStream(System.IO.Stream)">
+            <summary>
+            Copies to memory stream and returns new stream.
+            </summary>
+            <param name="inputStream">The input.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">input</exception>
+        </member>
+        <member name="M:BizAPP.Common.StreamUtils.CopyToMemoryStreamAsync(System.IO.Stream)">
+            <summary>
+            Copies to memory stream asynchronous.
+            </summary>
+            <param name="inputStream">The input stream.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">inputStream</exception>
+        </member>
+        <member name="T:EventPod.TimeConstants">
+            <summary>
+            Class Constants.
+            </summary>
+        </member>
+        <member name="F:EventPod.TimeConstants.T_1YEARSECONDS">
+            <summary>
+            The t 1 yearseconds
+            </summary>
+        </member>
+        <member name="F:EventPod.TimeConstants.T_60SECONDS">
+            <summary>
+            The t 60 seconds
+            </summary>
+        </member>
+    </members>
+</doc>

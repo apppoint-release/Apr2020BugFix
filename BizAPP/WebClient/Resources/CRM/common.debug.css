@@ -1,3 +1,6 @@
+.fill,table.grid {
+	width: 100%
+}
 /*#region TINY BOX*/
 .tbox {
 	position: absolute;
@@ -202,7 +205,7 @@
 	background-color: lightgray;
 	border-top: solid #ffffff 1px;
 	color: #333333;
-}
+}.
 
 .bza-alrtFooter .right {
 	float: right;
@@ -290,6 +293,9 @@
 
 /*#region Grid*/
 .bza-grd-emptytext { text-align: center; }
+.grid .rpp {
+	margin-right: .5rem;
+}
 .grid .gridFilter,
 .grid .gCreate,
 .grid .gCancel,
@@ -408,8 +414,6 @@
 .grid .gridmovelastdisable,
 .grid .gridmovefirstenable,
 .grid .gridmovefirstdisable {
-	width: 20px;
-	height: 20px;
 	cursor: pointer;
 	background-position: center;
 }

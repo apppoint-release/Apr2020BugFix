@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.Services.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.Services.IInProcService">
+            <summary>
+            Interface IInProcService
+            </summary>
+        </member>
+        <member name="T:BizAPP.Services.IOutProcService">
+            <summary>
+            Interface IOutProcService
+            </summary>
+        </member>
+        <member name="T:BizAPP.Services.Test.NotificationState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BizAPP.Services.Test.NotificationState.TimesProcessed">
+            <summary>
+            Gets or sets the times processed.
+            </summary>
+            <value>
+            The times processed.
+            </value>
+        </member>
+        <member name="M:BizAPP.Services.Test.NotificationState.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:BizAPP.Services.Test.INotificationOutProcService">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:BizAPP.Services.IOutProcService" />
+            <seealso cref="T:Orleans.IGrainWithStringKey" />
+        </member>
+        <member name="M:BizAPP.Services.Test.INotificationOutProcService.Notify">
+            <summary>
+            Notifies this instance.
+            </summary>
+            <returns>
+            Task&lt;System.String&gt;.
+            </returns>
+        </member>
+        <member name="M:BizAPP.Services.Test.INotificationOutProcService.GetProcesingState">
+            <summary>
+            Gets the state of the procesing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.Services.Test.ITestOutProcService">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:BizAPP.Services.IOutProcService" />
+            <seealso cref="T:Orleans.IGrainWithGuidCompoundKey" />
+        </member>
+        <member name="M:BizAPP.Services.Test.ITestOutProcService.GetEnvironmentInfo">
+            <summary>
+            Gets the environment information.
+            </summary>
+            <returns>Task&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:BizAPP.Services.Test.ITestOutProcService.GetUsers">
+            <summary>
+            Gets the users.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.Services.Test.ITestService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BizAPP.Services.Test.ITestService.GetEnvironmentInfo">
+            <summary>
+            Gets the environment information.
+            </summary>
+            <returns>Task&lt;System.String&gt;.</returns>
+        </member>
+    </members>
+</doc>

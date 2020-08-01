@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.OutProcService.Notification.Grains</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.Services.Test.NotificationOutProcService">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Orleans.Grain" />
+             <seealso cref="T:BizAPP.Services.Test.INotificationOutProcService" />
+        </member>
+        <member name="F:BizAPP.Services.Test.NotificationOutProcService._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="M:BizAPP.Services.Test.NotificationOutProcService.#ctor(Microsoft.Extensions.Logging.ILogger{BizAPP.Services.Test.NotificationOutProcService})">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Services.Test.NotificationOutProcService"/> class.
+            </summary>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:BizAPP.Services.Test.NotificationOutProcService.BizAPP#Services#Test#INotificationOutProcService#GetProcesingState">
+            <summary>
+            Gets the state of the procesing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.Test.NotificationOutProcService.BizAPP#Services#Test#INotificationOutProcService#Notify">
+            <summary>
+            Notifies this instance.
+            </summary>
+            <returns>
+            Task&lt;System.String&gt;.
+            </returns>
+        </member>
+        <member name="M:BizAPP.Services.Test.NotificationOutProcService.Orleans#IRemindable#ReceiveReminder(System.String,Orleans.Runtime.TickStatus)">
+            <summary>
+            Receive a new Reminder.
+            </summary>
+            <param name="reminderName">Name of this Reminder</param>
+            <param name="status">Status of this Reminder tick</param>
+            <returns>
+            Completion promise which the grain will resolve when it has finished processing this Reminder tick.
+            </returns>
+        </member>
+        <member name="M:BizAPP.Services.Test.NotificationOutProcService.InternalNotifyAsync">
+            <summary>
+            Internal notify asynchronous.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Identity.BizAPP</name>
+    </assembly>
+    <members>
+        <member name="T:Identity.BizAPP.Role">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Identity.BizAPP.RoleManager">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:Microsoft.AspNetCore.Identity.RoleManager&lt;Identity.BizAPP.Role&gt;" />
+        </member>
+        <member name="M:Identity.BizAPP.RoleManager.#ctor(Microsoft.AspNetCore.Identity.IRoleStore{Identity.BizAPP.Role},System.Collections.Generic.IEnumerable{Microsoft.AspNetCore.Identity.IRoleValidator{Identity.BizAPP.Role}},Microsoft.AspNetCore.Identity.ILookupNormalizer,Microsoft.AspNetCore.Identity.IdentityErrorDescriber,Microsoft.Extensions.Logging.ILogger{Microsoft.AspNetCore.Identity.RoleManager{Identity.BizAPP.Role}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Identity.BizAPP.RoleManager"/> class.
+            </summary>
+            <param name="store">The persistence store the manager will operate over.</param>
+            <param name="roleValidators">A collection of validators for roles.</param>
+            <param name="keyNormalizer">The normalizer to use when normalizing role names to keys.</param>
+            <param name="errors">The <see cref="T:Microsoft.AspNetCore.Identity.IdentityErrorDescriber" /> used to provider error messages.</param>
+            <param name="logger">The logger used to log messages, warnings and errors.</param>
+        </member>
+        <member name="T:Identity.BizAPP.RoleStore">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:Microsoft.AspNetCore.Identity.IRoleStore&lt;Identity.BizAPP.Role&gt;" />
+        </member>
+        <member name="T:Identity.BizAPP.SignInManager">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Identity.BizAPP.SignInManager.#ctor(BizAPP.Services.ISessionServiceWrapperService,BizAPP.Services.IQueryExecutionService,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Identity.BizAPP.SignInManager" /> class.
+            </summary>
+            <param name="sessionServiceWrapperService">The session service wrapper service.</param>
+            <param name="connection">The connection.</param>
+            <param name="loggerFactory">The logger factory.</param>
+            <exception cref="T:System.ArgumentNullException">connection</exception>
+            <exception cref="T:System.ArgumentNullException">connection</exception>
+        </member>
+        <member name="M:Identity.BizAPP.SignInManager.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Identity.BizAPP.SignInManager.Login(System.String,System.String)">
+            <summary>
+            Logins the specified user name.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <param name="password">The password.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">Invalid username/tenant information specified - TenantId={tid} Username={userName}
+            or
+            Invalid username/tenant information specified - TenantId={tid} Username={userName}
+            or
+            Unable to resolve user/role information for specified user details - TenantId={tid} Username={userName}</exception>
+            <exception cref="T:System.NotImplementedException"></exception>
+            <exception cref="T:System.Exception">Invalid user identification specified - {userName} or Invalid Login Info name!</exception>
+        </member>
+        <member name="T:Identity.BizAPP.StoreQueries">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Identity.BizAPP.BSQLExtensions.SetUseVisibility(BizAPP.Common.Query.BSQLObject,System.Boolean)">
+            <summary>
+            Sets the use visbililty.
+            </summary>
+            <param name="bsql">The BSQL.</param>
+            <param name="flag">if set to <c>true</c> [flag].</param>
+            <returns></returns>
+        </member>
+        <member name="T:Identity.BizAPP.User">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Microsoft.AspNetCore.Identity.IdentityUser" />
+        </member>
+        <member name="T:Identity.BizAPP.UserStore">
+             <summary>
+            
+             </summary>
+             <seealso cref="!:Microsoft.AspNetCore.Identity.IUserStore&lt;Identity.BizAPP.User&gt;" />
+        </member>
+        <member name="M:Identity.BizAPP.UserStore.#ctor(BizAPP.Services.IQueryExecutionService)">
+            <summary>
+            Initializes a new instance of the <see cref="!:UserStore&lt;User&gt;"/> class.
+            </summary>
+            <param name="connection">The connection.</param>
+            <autogeneratedoc/>
+        </member>
+        <member name="M:Identity.BizAPP.UserStore.ThrowIfDisposed">
+            <summary>
+            Throws if disposed.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"></exception>
+            <autogeneratedoc/>
+        </member>
+        <member name="F:Identity.BizAPP.UserStore._disposed">
+            <summary>
+            The disposed
+            </summary>
+            <autogeneratedoc/>
+        </member>
+        <member name="M:Identity.BizAPP.UserStore.System#IDisposable#Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting
+            unmanaged resources.
+            </summary>
+            <autogeneratedoc/>
+        </member>
+        <member name="M:Identity.BizAPP.UserStore.AddToRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Adds to role asynchronous.
+            </summary>
+            <param name="userId">The user identifier.</param>
+            <param name="role">The role.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="T:Identity.BizAPP.IdentityExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Identity.BizAPP.IdentityExtensions.WithBizAPPIdentity(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add custom bizapp services for identity
+            </summary>
+            <param name="sc">The sc.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Identity.BizAPP.SecretHelper">
+            <summary>
+            Summary description for SecretHelper.
+            </summary>
+        </member>
+        <member name="M:Identity.BizAPP.SecretHelper.ValidateHash(System.Byte[],System.String,System.Int32)">
+            <summary>
+            Helper method to validate hashed secret.
+            </summary>
+            <param name="hashedSecret">The hashed secret. Must have obtained using HashSecret method.</param>
+            <param name="newSecret">The secret message repeat that needs to validated.</param>
+            <param name="salt">The salt as used during hashing the secret.</param>
+            <returns></returns>
+            <exception cref="!:BizAPP.Common.Exceptions.BizAPPException"></exception>
+        </member>
+        <member name="M:Identity.BizAPP.SecretHelper.ComputeHash(System.String,System.Int32)">
+            <summary>
+            Computes the hash.
+            </summary>
+            <param name="secret">The secret.</param>
+            <param name="salt">The salt.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.Utils.ClaimUtils">
+            <summary>
+            Class ClaimUtils.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Utils.ClaimUtils.GetClaims(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}},System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.String}})">
+            <summary>
+            Gets the user claims.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="userId">The user identifier.</param>
+            <param name="userEmail">The user email.</param>
+            <param name="issuperuser">if set to <c>true</c> [issuperuser].</param>
+            <param name="roles">The roles.</param>
+            <param name="responsibilities">The responsibilities.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

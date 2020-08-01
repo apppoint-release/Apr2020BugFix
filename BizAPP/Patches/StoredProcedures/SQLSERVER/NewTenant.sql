@@ -11,7 +11,10 @@ CREATE PROCEDURE NewShardedTenant
 	@defaultAppId nvarchar(50),
 	@defaultMobileAppId nvarchar(50),
 	@organization nvarchar(300),
+	@hostCompanyRuleId nvarchar(50),
 	@websiteurl nvarchar(1024),
+	@websiteRuleId nvarchar(50),
+	@usersignupRuleId nvarchar(50),
 	@oAuthProviderName nvarchar(100),
 	@oAuthUserId nvarchar(100),
 	@oAuthUserName nvarchar(100),
@@ -101,17 +104,20 @@ BEGIN
 
 		-- copy parameter records
 		print 'copying host company name parameter'
-		select p.* into #tempparameter from parameter p inner join [rule] r on r.uniqueid = p.[rule]
-		where p.tid = @baseTenantId and p.parameter_name = 'name' and r.rule_nam1 = 'HostCompany'
-		update #tempparameter set tid = @tid, parameter_sharedvalue = @organization
-		insert into [parameter] select * from #tempparameter
-		drop table #tempparameter
+		if @hostCompanyRuleId is not null and @hostCompanyRuleId <> ''
+		begin
+			select p.* into #tempparameter from parameter p
+			where p.tid = @baseTenantId and p.parameter_name = 'name' and p.[rule] = @hostCompanyRuleId
+			update #tempparameter set tid = @tid, parameter_sharedvalue = @organization
+			insert into [parameter] select * from #tempparameter
+			drop table #tempparameter
+		end
 
 		-- setup websiteurl.
 		if @websiteurl is not null and @websiteurl <> ''
 		begin
-			select p.* into #tempparameter2 from parameter p inner join [rule] r on r.uniqueid = p.[rule]
-			where p.tid = @baseTenantId and p.parameter_name in ( 'Intranet', 'Internet' ) and r.rule_nam1 = 'WebsiteUrl'
+			select p.* into #tempparameter2 from parameter p
+			where p.tid = @baseTenantId and p.parameter_name in ( 'Intranet', 'Internet' ) and p.[rule] = @websiteRuleId
 			update #tempparameter2 set tid = @tid, parameter_sharedvalue = @websiteurl
 			insert into [parameter] select * from #tempparameter2
 			drop table #tempparameter2
@@ -119,12 +125,14 @@ BEGIN
 		
 		-- set usersignup uniqueid to clone to new user.
 		print 'copying user signup uniqueid to clone parameter'
-		select p.* into #tempparameter3 from parameter p inner join [rule] r on r.uniqueid = p.[rule]
-		where p.tid = @baseTenantId and p.parameter_name = 'UserUniqueIdToClone' and r.rule_nam1 = 'UserSignup'
-		update #tempparameter3 set tid = @tid, parameter_sharedvalue = @newBaseUserId
-		insert into [parameter] select * from #tempparameter3
-		drop table #tempparameter3
-
+		if @usersignupRuleId is not null and @usersignupRuleId <> ''
+		begin
+			select p.* into #tempparameter3 from parameter p
+			where p.tid = @baseTenantId and p.parameter_name = 'UserUniqueIdToClone' and p.[rule] = @usersignupRuleId
+			update #tempparameter3 set tid = @tid, parameter_sharedvalue = @newBaseUserId
+			insert into [parameter] select * from #tempparameter3
+			drop table #tempparameter3
+		end
 		-- WE ARE DONE. COMMIT.
 		COMMIT TRANSACTION
 	END TRY

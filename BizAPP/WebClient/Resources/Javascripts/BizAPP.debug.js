@@ -721,6 +721,9 @@ function setEnterpriseName(name, uid, sid, isDebug, df, dtf, path, fullName, bts
 			}
 		});
 	}
+
+	//if (g_hasAppAdminResp || g_hasSysAdminResp)
+		initSystemTray();
 }
 
 function initSystemTray() {
@@ -1683,6 +1686,8 @@ function cancelBubble(event) {
 function grdClick(event, grid, contextHashCode, EV, drlDwn) {
 	if (event == null)
 		event = window.event;
+	else
+		window.event = event;
 
 	cancelBubble(event);
 	var roid, className, source = getSourceElement(event);
@@ -1725,8 +1730,17 @@ function grdClick(event, grid, contextHashCode, EV, drlDwn) {
 			return;
 
 		else if (drlDwn && drlDwn.toString().toLocaleLowerCase() == 'true') {
-			if (EV != '' && EV != '[SEP]Inline')
-				handleExpandView(event, roid, EV, true);
+			if (source.className == 'gExpPP' && EV && EV.view) {
+				//EV = JSON.parse(EV);
+				if (EV.process) {
+					g_callBacks.push(function () {
+						handleExpandView(event, roid, EV, true);
+					})
+					callGridExecuteProcess(contextHashCode, roid);
+				}
+				else
+					handleExpandView(event, roid, EV, true);
+			}
 			else {
 				//if commit throws any error do not proceed
 				if (commitEditableGrids() != true)
@@ -1761,9 +1775,9 @@ function grdClick(event, grid, contextHashCode, EV, drlDwn) {
 		grid.deleteRow(parent.rowIndex);
 	}
 }
-function handleExpandView(event, roid, viewDisplayname, offsetTop) {
-	var view = viewDisplayname.split('[SEP]')[0];
-	var mode = viewDisplayname.split('[SEP]')[1];
+function handleExpandView(event, roid, ev, offsetTop) {
+	var view = ev.view;
+	var mode = ev.mode;
 	if (mode == "Popup")
 		callExpandViewPopup(event, roid, view, true);
 	else
@@ -1813,7 +1827,7 @@ function callInlineExpandView(event, roid, EV) {
 	}
 }
 function callGridExecuteProcess(CHC, roid) {
-	ajaxSyncCall('OptGridEx', ['ExecuteProcess', CHC, roid]);
+	ajaxAsyncCall('OptGridEx', ['ExecuteProcess', CHC, roid], false, true);
 }
 
 function getSourceElement(event) {
@@ -3839,6 +3853,10 @@ function callDisplayExportOptions(chc) {
 function callExportGridData(event, chc, isJob) {
 	var source = getSourceElement(event),
 		mode = $(source).closest('[mode]').attr('mode');
+	internalGridExport(mode, chc, isJob)
+	zoomout();
+}
+function internalGridExport(mode, chc, isJob) {
 	if (isJob.toLowerCase() == 'true')
 		BizAPP.UI.Grid.ExportAsJob(chc, mode);
 	else {
@@ -3849,7 +3867,6 @@ function callExportGridData(event, chc, isJob) {
 		}
 		bizapp_initDwnld(url);
 	}
-	zoomout();
 }
 function bizapp_GCDwnldFrame() {
 	var frame = $('#downloadFrame');
@@ -5078,6 +5095,8 @@ function realWizardApplyStep(outlineId, args, step, confirmStep, type, tabContro
 function callApplyStep(event, outlineId, args, step, confirmStep, type, snoDelay) {
 	if (!event)
 		event = window.event;
+	else
+		window.event = event
 
 	if (event && event.type == "focus" && event.altKey == false)
 		return;
@@ -5878,7 +5897,6 @@ function LoadPage(src, srcType, args) {
 
 	if (obj || g_customAjax) {
 		//BizAPP.UI.InitVue(function () {
-		g_callBacks.push(initSystemTray);
 		ajaxAsyncCall(srcType, ['LoadPage', args, callGetCurrentTimeZoneName1(), navigator.userAgent], !g_customAjax, true);
 		//})
 	}
@@ -11598,6 +11616,8 @@ BizAPP.UI = {
 				options.url += 'runtimeobjectid[NVS]' + options.roid + '[PMS]'
 			if (options.viewId)
 				options.url += 'runtimeviewenterpriseid[NVS]' + options.viewId + '[PMS]'
+			if (options.ignoreProcess)
+				options.url += 'navigationcontrol.ignoreprocess[NVS]true[PMS]'
 			if (options.target)
 				options.url += '&html.vcn=' + options.target;
 		}
@@ -11968,6 +11988,18 @@ BizAPP.UI = {
 			});
 	},
 	LoadCollaboration: function (callback, isV3) {
+		var jsPath;
+		if (isV3)
+			jsPath = 'resources/javascripts/BizAPP.UI.Collaboration.V3.js?v=';
+		else
+			jsPath = 'resources/javascripts/BizAPP.UI.Collaboration.js?v=';
+
+		$.cachedScript(BizAPP.UI.GetBasePath(jsPath + __bts_)).done(function (script, textStatus) {
+			BizAPP.UI.retryIndex = 0;
+			callback();
+		});
+		return;
+
 		if (BizAPP.UI.retryIndex < 8) {
 			if ($.connection && $.connection.hub.state) {
 				if (BizAPP.UI.Collaboration) {
@@ -12352,7 +12384,8 @@ BizAPP.UI.Toast = {
 			$('#chat-panel.bza-notifn .bza-notifn-window.chat-window').css('max-height', $(window).height().toString() + 'px').css('overflow', 'auto');
 		}
 		new PNotify(o);
-		BizAPP.SystemTray.AddMenu({ id: 'bza-notifn-menu', html: '<i class="fa fa-bell" title="Events & Alerts"></i>', click: function () { $('#chat-panel.bza-notifn').toggle(); } });
+		if (BizAPP.SystemTray)
+			BizAPP.SystemTray.AddMenu({ id: 'bza-notifn-menu', html: '<i class="fa fa-bell" title="Events & Alerts"></i>', click: function () { $('#chat-panel.bza-notifn').toggle(); } });
 		$('#chat-panel.bza-notifn').show();
 		//BizAPP.Collaboration.ShowNotification('System Alert', a);
 	}
@@ -13394,7 +13427,6 @@ BizAPP.UI.ReAuth = {
 		}
 	},
 	_options: null,
-	SubmitCallback: null,
 	SubmitVerificationCode: function () {
 		var options = BizAPP.UI.ReAuth._options
 		if (BizAPP.UI.ReAuth.SubmitCallback)
@@ -13652,6 +13684,7 @@ BizAPP.UI.LinkControl = {
 	},
 	sequentialLink1: function (link, event, CHC, isInlinePopup) {
 		var args;
+		window.event = event;
 		if (link) {
 			var params = BizAPP.UI.LinkControl._getParams(link);
 			params.push(isInlinePopup);
@@ -14065,12 +14098,23 @@ BizAPP.UI.TextEditor = {
 
 BizAPP.UI.Tab = {
 	_switchPage: function (table, event) {
-		var tabPage = getSourceElement(event);
-		if (tabPage.nodeName.toLowerCase() != 'td')
-			tabPage = $(tabPage).closest('[groupid]');
-		tabPage = $(tabPage);
-		var pageArgs = tabPage.attr('bza-args').split('[VS]');
+		var srcElement = getSourceElement(event);
+		var tabPage = srcElement;
 
+		if (typeof $.fn.tooltip.Constructor != 'undefined' && parseInt($.fn.tooltip.Constructor.VERSION) == 4) {
+			tabPage = $(table).find('.dynamic-tab[tab-id='+$(tabPage).parent().attr('tab-id')+']')
+		}
+		else {
+			if (tabPage.nodeName.toLowerCase() != 'td')
+				tabPage = $(tabPage).closest('[groupid]');
+			tabPage = $(tabPage);
+		}
+
+		if (!tabPage.length) {
+			tabPage = $(srcElement.closest('[bza-args]'));
+		}
+
+		var pageArgs = tabPage.attr('bza-args').split('[VS]');
 		callShowTabPage(event, $(table).attr('bza-args'), tabPage.attr('groupid'), pageArgs[0], tabPage[0], pageArgs[1]);
 		sltTab(tabPage[0]);
 	}
@@ -15014,6 +15058,9 @@ BizAPP.UI.Grid = {
 			text = options.text,
 			retVal = text,
 			operator = null;
+
+		if (typeof (BizAPP.Bootstrap) == 'undefined')
+			return retVal;
 
 		var regex1 = new RegExp('>=|<=');
 		var regex2 = new RegExp('>|!|=|<');

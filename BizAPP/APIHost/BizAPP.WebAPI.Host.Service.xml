@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.WebAPI.Host.Service</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.WebAPI.Host.WinService.Program">
+            <summary>
+            Class Program.
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.WinService.Program.Main(System.String[])">
+            <summary>
+            Main Entry Point.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>
+            Task&lt;System.Int32&gt;.
+            </returns>
+        </member>
+    </members>
+</doc>

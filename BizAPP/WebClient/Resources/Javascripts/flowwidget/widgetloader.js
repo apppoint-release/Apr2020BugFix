@@ -7,77 +7,98 @@ var me = document.currentScript
 var widgetId = me.getAttribute('data-id')
 var scriptUrl = me.getAttribute('src')
 var widgetServerUrl = scriptUrl.substr(0, scriptUrl.indexOf('/resources/')) + '/'
-var widgetPostHeaders = []
 var widgetPosition = me.getAttribute('data-triggerbtn-position')
 if (!widgetPosition) {
 	widgetPosition = 'bottom-right'
 }
 
+var widgetPostHeaders = []
 me.getAttributeNames().forEach(function (aName) {
 	if (aName.toLowerCase().startsWith('data-x-')) {
 		widgetPostHeaders.push({
-			header: aName.substr(5),
+			name: aName.substr(5),
 			value: me.getAttribute(aName)
 		})
 	}
 })
 
-function _loadScript(url) {
-	return new Promise(function (resolve, reject) {
-		var newScript = document.createElement("script");
-		newScript.onload = function () { resolve() }
-		newScript.onerror = function (error) { reject(error) }
-		document.body.appendChild(newScript);
-		newScript.src = url;
-	})
-}
-function _loadStyle(url) {
-	return new Promise(function (resolve, reject) {
-		var link = document.createElement("link");
-		link.type = 'text/css';
-		link.rel = 'stylesheet';
-		link.onload = function () { resolve() }
-		link.onerror = function (error) { reject(error) }
-		document.head.appendChild(link);
-		link.href = url;
-	})
-}
-
-
-if (widgetId && widgetServerUrl) {
-	Promise.all([
-		_loadScript('https://unpkg.com/vue'),
-		_loadScript('https://unpkg.com/http-vue-loader'),
-		_loadStyle('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css'),
-		_loadStyle('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/solid.min.css'),
-		_loadStyle(widgetServerUrl + 'resources/javascripts/flowwidget/vfg.css'),
-		_loadScript(widgetServerUrl + 'resources/javascripts/flowwidget/vfg.js'),
-	])
-		.then(_ => {
-
-			// create a mock container for vue
-			var vueComponentContainer = document.body.appendChild(document.createElement('section'))
-
-			// let vue do its thing...
-			new Vue({
-				el: vueComponentContainer,
-				template: '<widget :serverurl="serverUrl" :widgetid="widgetId" :widgetpostheaders="widgetPostHeaders" :widgetposition="widgetPosition"></widget>',
-				components: {
-					'widget': httpVueLoader(widgetServerUrl + 'resources/javascripts/flowwidget/widget.vue')
-				},
-				data() {
-					return {
-						serverUrl: widgetServerUrl,
-						widgetId: widgetId,
-						widgetPostHeaders: widgetPostHeaders,
-						widgetPosition: widgetPosition
-					}
-				}
-			});
+var BizAPP = BizAPP || {};
+BizAPP.FlowWidget = class FlowWidget {
+	_loadScript(url) {
+		return new Promise(function (resolve, reject) {
+			var newScript = document.createElement("script");
+			newScript.onload = function () { resolve() }
+			newScript.onerror = function (error) { reject(error) }
+			document.body.appendChild(newScript);
+			newScript.src = url;
 		})
-		.catch(error => {
-			console.log("ERROR LOADING SCRIPT - ", error)
+	}
+	_loadStyle(url) {
+		return new Promise(function (resolve, reject) {
+			var link = document.createElement("link");
+			link.type = 'text/css';
+			link.rel = 'stylesheet';
+			link.onload = function () { resolve() }
+			link.onerror = function (error) { reject(error) }
+			document.head.appendChild(link);
+			link.href = url;
 		})
-} else {
-	console.log('WIDGET: could not find widget configuration in script, so ignoring all errors')
+	}
+
+	showWidget(args) {
+		const that = this
+		const { widgetServerUrl, widgetId, widgetPosition, widgetPostHeaders, additionalPostValues } = args
+		if (widgetId && widgetServerUrl) {
+			Promise.all([
+				that._loadScript(widgetServerUrl + 'resources/javascripts/vue.min.js'),
+				that._loadScript(widgetServerUrl + 'resources/javascripts/httpvueloader.js'),
+				that._loadStyle('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css'),
+				that._loadStyle('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/solid.min.css'),
+				that._loadStyle(widgetServerUrl + 'resources/javascripts/flowwidget/vfg-core.css'),
+				that._loadScript(widgetServerUrl + 'resources/javascripts/flowwidget/vfg.js'),
+			])
+				.then(_ => {
+
+					// create a mock container for vue
+					var vueComponentContainer = document.body.appendChild(document.createElement('section'))
+
+					// let vue do its thing...
+					new Vue({
+						el: vueComponentContainer,
+						template: '<widget :serverurl="serverUrl" :widgetid="widgetId" :widgetpostheaders="widgetPostHeaders" :widgetposition="widgetPosition" :additionalpostvalues="additionalPostValues"></widget>',
+						components: {
+							'widget': httpVueLoader(widgetServerUrl + 'resources/javascripts/flowwidget/widget.vue')
+						},
+						data() {
+							return {
+								serverUrl: widgetServerUrl,
+								widgetId: widgetId,
+								widgetPostHeaders: widgetPostHeaders,
+								widgetPosition: widgetPosition,
+								additionalPostValues: additionalPostValues
+							}
+						}
+					});
+				})
+				.catch(error => {
+					console.log("ERROR LOADING SCRIPT - ", error)
+				})
+		} else {
+			console.log('WIDGET: could not find widget configuration in script, so ignoring all errors')
+		}
+	}
+}
+
+// If have all the information, trigger it...
+if (widgetServerUrl && widgetId) {
+	new BizAPP.FlowWidget()
+		.showWidget({
+			widgetServerUrl,
+			widgetId,
+			widgetPosition,
+			widgetPostHeaders,
+			//additionalPostValues: [
+			//	{ name: '%currentuser%', value: 'someid' }
+			//]
+		})
 }

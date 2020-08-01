@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.WebAPI.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.WebAPI.ControllerBaseEx">
+            <summary>
+            Class ControllerBaseEx.
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.ExecuteQuery(BizAPP.Services.ISessionServiceWrapperService,System.String,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <param name="_ss">The ss.</param>
+            <param name="queryid">The queryid.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.ExecuteQuery``1(BizAPP.Services.ISessionServiceWrapperService,System.String,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="_ss">The ss.</param>
+            <param name="queryid">The queryid.</param>
+            <param name="parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.AuthorizeResponsibilitiesAttribute">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Microsoft.AspNetCore.Mvc.TypeFilterAttribute" />
+        </member>
+        <member name="M:BizAPP.WebAPI.AuthorizeResponsibilitiesAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.AuthorizeResponsibilitiesAttribute" /> class.
+            </summary>
+            <param name="responsibilities">The responsibilities.</param>
+        </member>
+        <member name="T:BizAPP.WebAPI.AuthorizeResponsibilitiesFilter">
+            <summary>
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Filters.IAuthorizationFilter"/>
+        </member>
+        <member name="F:BizAPP.WebAPI.AuthorizeResponsibilitiesFilter._responsibilities">
+            <summary>
+            The claim
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.AuthorizeResponsibilitiesFilter.#ctor(System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.AuthorizeResponsibilitiesFilter"/> class.
+            </summary>
+            <param name="responsibilities">The responsibilities.</param>
+        </member>
+        <member name="M:BizAPP.WebAPI.AuthorizeResponsibilitiesFilter.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            Called early in the filter pipeline to confirm request is authorized.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext" />.</param>
+        </member>
+        <member name="T:BizAPP.WebAPI.ErrorProblemDetails">
+            <summary>
+            Class ErrorProblemDetails.
+            </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.ErrorProblemDetails.InnerDetails">
+            <summary>
+            Gets or sets the inner.
+            </summary>
+            <value>
+            The inner.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.ErrorProblemDetails.CallStack">
+            <summary>
+            Gets or sets the call stack.
+            </summary>
+            <value>
+            The call stack.
+            </value>
+        </member>
+        <member name="M:BizAPP.WebAPI.ErrorProblemDetails.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.ErrorProblemDetails"/> class.
+            </summary>
+            <param name="details">The details.</param>
+        </member>
+        <member name="M:BizAPP.WebAPI.ErrorProblemDetails.op_Explicit(System.String)~BizAPP.WebAPI.ErrorProblemDetails">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.String"/> to <see cref="T:BizAPP.WebAPI.ErrorProblemDetails"/>.
+            </summary>
+            <param name="errorMessage">The error message.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ErrorProblemDetails.op_Explicit(System.Exception)~BizAPP.WebAPI.ErrorProblemDetails">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.Exception"/> to <see cref="T:BizAPP.WebAPI.ErrorProblemDetails"/>.
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="T:BizAPP.WebAPI.JWTOptions">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.JWTOptions.Key">
+            <summary>
+            Gets or sets the key.
+            </summary>
+            <value>
+            The key.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.JWTOptions.ExpireMinutes">
+            <summary>
+            Gets or sets the expire minutes.
+            </summary>
+            <value>
+            The expire minutes.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.JWTOptions.Issuer">
+            <summary>
+            Gets or sets the issuer.
+            </summary>
+            <value>
+            The issuer.
+            </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.JWTOptions.Audience">
+            <summary>
+            Gets or sets the audience.
+            </summary>
+            <value>
+            The audience.
+            </value>
+        </member>
+        <member name="T:BizAPP.WebAPI.LoginModel">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.LoginModel.Username">
+            <summary>
+            Gets or sets the username.
+            </summary>
+            <value>The username.</value>
+        </member>
+        <member name="P:BizAPP.WebAPI.LoginModel.Password">
+            <summary>
+            Gets or sets the password.
+            </summary>
+            <value>The password.</value>
+        </member>
+        <member name="T:BizAPP.Services.ISignInManager">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BizAPP.Services.ISignInManager.Login(System.String,System.String)">
+            <summary>
+            Logins using credentials.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <param name="password">The password.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

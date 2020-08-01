@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BizAPP.OutProcService.Test.Grains</name>
+    </assembly>
+    <members>
+        <member name="T:BizAPP.Services.Test.TestOutProcService">
+             <summary>
+            
+             </summary>
+             <seealso cref="T:Orleans.Grain" />
+             <seealso cref="T:BizAPP.Services.Test.ITestOutProcService" />
+        </member>
+        <member name="F:BizAPP.Services.Test.TestOutProcService._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:BizAPP.Services.Test.TestOutProcService._sp">
+            <summary>
+            The sp
+            </summary>
+        </member>
+        <member name="M:BizAPP.Services.Test.TestOutProcService.#ctor(Microsoft.Extensions.Logging.ILogger{BizAPP.Services.Test.TestOutProcService},System.IServiceProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Services.Test.TestOutProcService" /> class.
+            </summary>
+            <param name="logger">The logger.</param>
+            <param name="sp">The sp.</param>
+        </member>
+        <member name="M:BizAPP.Services.Test.TestOutProcService.GetEnvironmentInfo">
+            <summary>
+            Gets the environment information.
+            </summary>
+            <returns>
+            Task&lt;System.String&gt;.
+            </returns>
+        </member>
+        <member name="M:BizAPP.Services.Test.TestOutProcService.GetUsers">
+            <summary>
+            Gets the users.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:BizAPP.Services.Test.TestOutProcService.BSQL_USERS">
+            <summary>
+            The BSQL users
+            </summary>
+        </member>
+    </members>
+</doc>
