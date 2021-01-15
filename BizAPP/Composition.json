@@ -27,5 +27,7 @@
     "BizAPP.ExternalDataSource.OleDb, Version=1.1.0.37, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e",
     "BizAPP.ExternalDataSource.Oracle, Version=1.1.0.37, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e",
     "BizAPP.ExternalDataSource.SalesForce, Version=1.1.0.37, Culture=neutral, PublicKeyToken=bc1aabc9722d6b0e",
-    "SystemUnit.Tenancy, Version=1.1.0.37, Culture=neutral, PublicKeyToken=5cd91901593ba07f"
+    "SystemUnit.Tenancy, Version=1.1.0.37, Culture=neutral, PublicKeyToken=5cd91901593ba07f",
+    "BizAPP.AsyncServices.Services.Job, Version=1.1.0.37, Culture=neutral, PublicKeyToken=895b644ef4b347d4",
+    "BizAPP.Runtime.Core.NLog.Targets, Version=1.1.0.37, Culture=neutral, PublicKeyToken=5cd91901593ba07f"
 ]

@@ -37,6 +37,8 @@ BEGIN
 		"c0"."active" "companyactive",
 		"r1"."role_defaultapplication" "defaultapplication",
 		"u1"."loginmode",
+		coalesce("u1"."dateformat","c0"."dateformat") "dateformat",
+		coalesce("u1"."timestampformat","c0"."timestampformat") "timestampformat",
 		(
 			case when ((iplow is not null) OR (macid is not null)) then
 			(

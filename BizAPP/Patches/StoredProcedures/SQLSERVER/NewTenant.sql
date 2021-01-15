@@ -81,7 +81,7 @@ BEGIN
 		exec CreateNonTenantUser @tid,@adminUserId,null,@baseUserLogin,'systemuser','system',@baseUserLogin,null,null,null,null,@organization,0,1,null,null,null,0,0,@newBaseUserId output,@newBaseUser output
 		if @newBaseUserId is not null 
 		begin
-			update [user] set attributes='Hidden' where uniqueid=@newBaseUserId and tid=@tid
+			update [user] set attributes='Hidden',loginmode='N' where uniqueid=@newBaseUserId and tid=@tid
 			-- delete role templates
 			delete from r_objecttemp_role where parent=(select top 1 parent from r_role_user where child=@newBaseUserId and tid=@tid) and tid=@tid
 		end

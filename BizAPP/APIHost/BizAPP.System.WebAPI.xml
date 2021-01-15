@@ -40,6 +40,23 @@
             <param name="userManager">The user manager.</param>
             <returns></returns>
         </member>
+        <member name="T:BizAPP.WebAPI.Host.AccountController.LoginResult">
+            <summary>
+            Class LoginResult.
+            </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.AccountController.LoginResult.access_token">
+            <summary>
+            Gets or sets the access token.
+            </summary>
+            <value>The access token.</value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.AccountController.LoginResult.expires_in">
+            <summary>
+            Gets or sets the expires in.
+            </summary>
+            <value>The expires in.</value>
+        </member>
         <member name="T:BizAPP.WebAPI.Host.DiagnosticsController">
             <summary>
             
@@ -189,7 +206,7 @@
             Class ControllerExtensions.
             </summary>
         </member>
-        <member name="M:BizAPP.ControllerExtensions.Json(Microsoft.AspNetCore.Mvc.ControllerBase,System.String)">
+        <member name="M:BizAPP.ControllerExtensions.JsonResult(Microsoft.AspNetCore.Mvc.ControllerBase,System.String)">
             <summary>
             Returns Json content.
             </summary>
@@ -197,9 +214,25 @@
             <param name="json">The json.</param>
             <returns>Microsoft.AspNetCore.Mvc.ActionResult.</returns>
         </member>
-        <member name="M:BizAPP.ControllerExtensions.Json(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
+        <member name="M:BizAPP.ControllerExtensions.JsonResult(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
             <summary>
             Returns Json content.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="json">The json.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.ControllerExtensions.BadRequestJsonResult(Microsoft.AspNetCore.Mvc.ControllerBase,System.String)">
+            <summary>
+            Bads the request json result.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="json">The json.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.ControllerExtensions.ServerError(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
+            <summary>
+            Servers the error.
             </summary>
             <param name="context">The context.</param>
             <param name="json">The json.</param>

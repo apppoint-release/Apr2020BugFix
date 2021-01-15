@@ -10,6 +10,17 @@
             </summary>
             <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
         </member>
+        <member name="F:BizAPP.WebAPI.ControllerBaseEx._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.ControllerBaseEx.Logger">
+            <summary>
+            Gets the logger.
+            </summary>
+            <value>The logger.</value>
+        </member>
         <member name="M:BizAPP.WebAPI.ControllerBaseEx.ExecuteQuery(BizAPP.Services.ISessionServiceWrapperService,System.String,System.Collections.Hashtable)">
             <summary>
             Executes the query.
@@ -63,49 +74,6 @@
             </summary>
             <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext" />.</param>
         </member>
-        <member name="T:BizAPP.WebAPI.ErrorProblemDetails">
-            <summary>
-            Class ErrorProblemDetails.
-            </summary>
-        </member>
-        <member name="P:BizAPP.WebAPI.ErrorProblemDetails.InnerDetails">
-            <summary>
-            Gets or sets the inner.
-            </summary>
-            <value>
-            The inner.
-            </value>
-        </member>
-        <member name="P:BizAPP.WebAPI.ErrorProblemDetails.CallStack">
-            <summary>
-            Gets or sets the call stack.
-            </summary>
-            <value>
-            The call stack.
-            </value>
-        </member>
-        <member name="M:BizAPP.WebAPI.ErrorProblemDetails.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.ErrorProblemDetails"/> class.
-            </summary>
-            <param name="details">The details.</param>
-        </member>
-        <member name="M:BizAPP.WebAPI.ErrorProblemDetails.op_Explicit(System.String)~BizAPP.WebAPI.ErrorProblemDetails">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.String"/> to <see cref="T:BizAPP.WebAPI.ErrorProblemDetails"/>.
-            </summary>
-            <param name="errorMessage">The error message.</param>
-            <returns>The result of the conversion.</returns>
-        </member>
-        <member name="M:BizAPP.WebAPI.ErrorProblemDetails.op_Explicit(System.Exception)~BizAPP.WebAPI.ErrorProblemDetails">
-            <summary>
-            Performs an explicit conversion from <see cref="T:System.Exception"/> to <see cref="T:BizAPP.WebAPI.ErrorProblemDetails"/>.
-            </summary>
-            <param name="exception">The exception.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
         <member name="T:BizAPP.WebAPI.JWTOptions">
              <summary>
             
@@ -158,6 +126,65 @@
             Gets or sets the password.
             </summary>
             <value>The password.</value>
+        </member>
+        <member name="T:BizAPP.Filters.UserAgentFilterAttribute">
+            <summary>
+            Class UserAgentFilterAttribute. This class cannot be inherited.
+            Implements the <see cref="T:System.Attribute" />
+            Implements the <see cref="T:Microsoft.AspNetCore.Mvc.Filters.IResourceFilter" />
+            </summary>
+            <seealso cref="T:System.Attribute" />
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Filters.IResourceFilter" />
+        </member>
+        <member name="M:BizAPP.Filters.UserAgentFilterAttribute.OnResourceExecuted(Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext)">
+            <summary>
+            Executes the resource filter. Called after execution of the remainder of the pipeline.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext" />.</param>
+        </member>
+        <member name="M:BizAPP.Filters.UserAgentFilterAttribute.OnResourceExecuting(Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext)">
+            <summary>
+            Executes the resource filter. Called before execution of the remainder of the pipeline.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext" />.</param>
+        </member>
+        <member name="T:BizAPP.ErrorProblemDetails">
+            <summary>
+            Class ErrorProblemDetails.
+            </summary>
+        </member>
+        <member name="P:BizAPP.ErrorProblemDetails.InnerDetails">
+            <summary>
+            Gets or sets the inner.
+            </summary>
+            <value>The inner.</value>
+        </member>
+        <member name="P:BizAPP.ErrorProblemDetails.CallStack">
+            <summary>
+            Gets or sets the call stack.
+            </summary>
+            <value>The call stack.</value>
+        </member>
+        <member name="M:BizAPP.ErrorProblemDetails.#ctor(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.ErrorProblemDetails"/> class.
+            </summary>
+            <param name="details">The details.</param>
+            <param name="status">The status.</param>
+        </member>
+        <member name="M:BizAPP.ErrorProblemDetails.op_Explicit(System.String)~BizAPP.ErrorProblemDetails">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.String"/> to <see cref="T:BizAPP.ErrorProblemDetails"/>.
+            </summary>
+            <param name="errorMessage">The error message.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:BizAPP.ErrorProblemDetails.op_Explicit(System.Exception)~BizAPP.ErrorProblemDetails">
+            <summary>
+            Performs an explicit conversion from <see cref="T:System.Exception"/> to <see cref="T:BizAPP.ErrorProblemDetails"/>.
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>The result of the conversion.</returns>
         </member>
         <member name="T:BizAPP.Services.ISignInManager">
              <summary>

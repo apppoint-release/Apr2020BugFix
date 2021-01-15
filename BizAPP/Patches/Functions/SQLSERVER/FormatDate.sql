@@ -39,7 +39,8 @@ BEGIN
 	WHEN 'dd-MMM-yyyy h:nn:ss tt' THEN CAST(DATENAME(day, @date) AS NVARCHAR(2)) + '-' + CAST(DATENAME(month, @date) AS NVARCHAR(3)) + '-' + CAST(DATENAME(year, @date) AS NVARCHAR(4))
 		+ ' ' + CAST((CASE WHEN (DATENAME(hour, @date)%12=0) THEN 12 ELSE DATENAME(hour, @date)%12 END) AS NVARCHAR(2)) + ':' + RIGHT('0' + CAST(DATENAME(minute, @date) AS VARCHAR(2)), 2) + ':' + RIGHT('0' + CAST(DATENAME(second, @date) AS NVARCHAR(2)), 2) + ' ' + RIGHT(CONVERT(CHAR(20), @date, 22), 2)
 	WHEN 'h:nn tt' THEN CAST((CASE WHEN (DATENAME(hour, @date)%12=0) THEN 12 ELSE DATENAME(hour, @date)%12 END) AS NVARCHAR(2)) + ':' + RIGHT('0' + CAST(DATENAME(minute, @date) AS VARCHAR(2)), 2) + ' ' + RIGHT(CONVERT(CHAR(20), @date, 22), 2)
-
+	WHEN 'yyyy-MMM-dd' THEN CAST(DATENAME(year, @date) AS NVARCHAR(4)) + '-' + CAST(DATENAME(month, @date) AS NVARCHAR(3)) + '-' + CAST(DATENAME(day, @date) AS NVARCHAR(2))
+	
 	WHEN 'MM/DD/YY'				THEN CONVERT(VARCHAR(8), @date, 1)
 	WHEN 'MM/DD/YYYY'			THEN CONVERT(VARCHAR(10), @date, 101)
 	WHEN 'MM-DD-YY'				THEN CONVERT(VARCHAR(8), @date, 10)

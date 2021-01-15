@@ -12,7 +12,11 @@
 	        else {
 	            window.parent.postMessage(authResult, '*');
 	        }
-	    }
+        }
+
+        function closeOnCancel() {
+            window.close();
+        }
 
 	    function FetchAuthTokenAndRedirect(oAuthHostUrl, authResult) {
 	        BizAPP.UI.OAuth.PreFetch(oAuthHostUrl, function () {

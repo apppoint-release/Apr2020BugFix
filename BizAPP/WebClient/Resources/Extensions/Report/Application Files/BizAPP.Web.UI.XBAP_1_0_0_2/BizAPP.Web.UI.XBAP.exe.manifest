@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="BizAPP.Web.UI.XBAP.exe" version="1.0.0.2" publicKeyToken="9b263cfc2e6f7aa0" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="BizAPP.Web.UI.XBAP.exe" version="1.0.0.2" publicKeyToken="a2192026fac1c666" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="BizAPP.Web.UI.XBAP" version="1.1.0.37" publicKeyToken="7D046217B54B6FFB" language="neutral" processorArchitecture="msil" />
@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Common.dll" size="1146368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Common.dll" size="1152000">
       <assemblyIdentity name="BizAPP.Common" version="1.1.0.37" publicKeyToken="9535E20D0DFB7CA8" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iLVGJTQrX1eFlNHfjO6PhNIpx3906+5EyF5jt60WIM0=</dsig:DigestValue>
+        <dsig:DigestValue>ah4AumyuczJjHW8lV4VZUKWiiPBX6ixUggPyaB7KbHM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GhdqRwYbVZN6V3Zfzi59MQcjQAt0NbQTca5hbWiUIhs=</dsig:DigestValue>
+        <dsig:DigestValue>Gt1zr0sJtttuei3pxSCT0/kjZTm1nXJf3JGDjeODQPk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1nF6fXKMaWB+sA7dqK0wnv++vaGvb8mFhkEXwxAwcmg=</dsig:DigestValue>
+        <dsig:DigestValue>puwDMPSKG1j2I9Wnx0+7P7M435BR6vnqcoq3sJbYy6E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hiP5V4fOg5aSDMNsyMpAYTilI+Xx5nAD4xcmATPAQd8=</dsig:DigestValue>
+        <dsig:DigestValue>kS5e9Pj+JgUDPXfn6J7oqxd2luzEwSkTjEXlDGk4qUg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pfQ/iICu1xieRX26+g19QTt0/ENgbYM7ysexgQwZS20=</dsig:DigestValue>
+        <dsig:DigestValue>8c2vPYz4wkYKvoJG4lpNhm1+sbH34IvsvuB/K/gF1Uw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -133,7 +133,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uveK45dapvFcr9jiAbyoS9DxQmVx3z8bC5nKaguvq7w=</dsig:DigestValue>
+        <dsig:DigestValue>EAbFa7885nn/d2F3B31miI7k5W4xDzjIhpbp1aQPAoM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -145,7 +145,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DoXjTQc2YN8nwDHOWt+OjcdoKN34aeBl3vzTJcViM1E=</dsig:DigestValue>
+        <dsig:DigestValue>y2xMxCi3SBVF31a2kehkIhGahWMzyyAhxkvNBddOfjU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -157,7 +157,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BAGiJ1Ac4bJsVJhzQsAbVdq8afvqgS6nO/mk5GUoWX4=</dsig:DigestValue>
+        <dsig:DigestValue>OYN7t9DekjJfmtXtigFDpKwztCWDrgmOTHYpLhJKMgo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -169,7 +169,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iOxcr1FX+HchUNkZ5xNztpqB2Hw0XmWp0KasoZPWg2s=</dsig:DigestValue>
+        <dsig:DigestValue>PtCluYITvItEdrr3YJeDYhdjyrIBiHnD4R+WQrWHts8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -181,7 +181,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>67dMGAnVNzHLa4tnbLS+PL/JnV6bKH2hC6bqCS/MdbE=</dsig:DigestValue>
+        <dsig:DigestValue>gLt57iHFSM3XC4FkxXPx8Lny/M8xGQs1LEfl0PEtEMU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -193,7 +193,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZeJAXAKMQzVPaHUkfMUutsihD1u3D6Uz7Sy2NRHtXbs=</dsig:DigestValue>
+        <dsig:DigestValue>bC+y5/UMKD6ZdvvEMC5/VQyLqjubfnos61NnZhNkrVU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -205,7 +205,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2CE4OoaHU6xvPuCtupbT0KFJzfga8sXMsmvUwV0VRzQ=</dsig:DigestValue>
+        <dsig:DigestValue>Y34rfWqi5P36SKjDpF5WFD6uPayVvOYy+7hlw8qYIFQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -217,7 +217,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5/ucyrBAqHce4xqE72sk5EgDcRCDnByL4yH+Cusu/Ok=</dsig:DigestValue>
+        <dsig:DigestValue>svoLkZrXvtFTjqWvDUWSr92HoqLR5kDoohhQrqVypBU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -229,7 +229,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+fOHbjiM4pAWHiWgYlUqw6WH7Sv5uEI7g5gZwn6m/HI=</dsig:DigestValue>
+        <dsig:DigestValue>e33/RnEr/zy4LFg0HSuhxtVJ/GBcCvuCfg3EMitzXX8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -241,7 +241,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jJ04AEpmPYMjcorv7/8AIPmWaCdbhI7YvVakpiZuQik=</dsig:DigestValue>
+        <dsig:DigestValue>6o6lMmplEpCy7RS68Uf1PDl68h4hAks0xdbq4e1HV7E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -253,19 +253,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZsgKCjwjPcmgbU6Xp0/wmhjLxwjqqW47JFXnKkxmHyM=</dsig:DigestValue>
+        <dsig:DigestValue>+JiKF4ZGqmaxZGMUodmmnUyeQ0qefX5vLs9inLvW0tI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Common.ProtoSerializer.dll" size="841216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Common.ProtoSerializer.dll" size="862208">
       <assemblyIdentity name="BizAPP.Common.ProtoSerializer" version="1.0.0.0" publicKeyToken="9535E20D0DFB7CA8" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jUpnEVED296/Pa8miDTDzyRjqDcFYQwgqAJqOCupvjU=</dsig:DigestValue>
+        <dsig:DigestValue>t6kN3aOF2IB7HzsYu+mfwDRccGxJUBCtT7JR73v1GbQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -277,7 +277,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>riqXqcd7WGnYZtgnBJOvov/SG3gbPCm9FNT3OeMXSYY=</dsig:DigestValue>
+        <dsig:DigestValue>PbbvlLavZLz4v7ABtSHuk6hF0ZPJv0UuStx4SQRl4B8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IAwxOuFQphGmRXI69DhJKXeTYl15nIYopML2OX05PB8=</dsig:DigestValue>
+        <dsig:DigestValue>o71orVZqwk+b8VoARNiGgQPdIfYM/Ye8FmlHINmScRY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -301,7 +301,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FcaWUDKRYuln2ZhZTDm/gHR2aYL/kFMdtKY5m6RhLV0=</dsig:DigestValue>
+        <dsig:DigestValue>xKx5yra7sxwcKlvDQ6R3Q7NftfxlQPuF8YOpHd7Xp9k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -313,7 +313,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9eKRw3hcyYghM0cfoeYpDP2ZOJr0p4ZCbKjUh9z6NTA=</dsig:DigestValue>
+        <dsig:DigestValue>DJZIKLI4+Qj/5YhQsQTSKf2X1hAQQwjE6+e1+AeulNQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -325,7 +325,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9HTnPjbw4X9lTUveOZ0agFatBgqNSX/pGxgd5BOlk84=</dsig:DigestValue>
+        <dsig:DigestValue>0HW1OPCgE4ob1yf24vtDfyv8hUDBePAtgQ5fZRxcjrs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -337,7 +337,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PHeEl7KAKZF8ioQil4BetPThRTdchn9qIxcvZkPE+lE=</dsig:DigestValue>
+        <dsig:DigestValue>1Cp9y1xhfl5uhegEDd+RzHdln4pMn0n2gE9fjxVK23k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -349,19 +349,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GKOd1ysdVbCMEdWgZQ5z4cxMqJVFnqXxQkfXBHjPgCQ=</dsig:DigestValue>
+        <dsig:DigestValue>/c6kpijB0RkmxGpwkjLPAJmBaewQZ3i4skgufoX40/o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Common.SourceControlProvider.dll" size="17920">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Common.SourceControlProvider.dll" size="18432">
       <assemblyIdentity name="BizAPP.Common.SourceControlProvider" version="1.1.0.37" publicKeyToken="9535E20D0DFB7CA8" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pb5xGKxe0gWbN2WlluU2Wu/rSLSGCrfKldDO5IoZ5Jo=</dsig:DigestValue>
+        <dsig:DigestValue>r9PA8vuV2Ck4APMpDg9Xo6vUGYDjIPqdEsn7dFUl6cA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -373,7 +373,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>33gB9Ep+XS9VvJHDY7M0oD+SEjTMDjWYBWsGnx1mAK4=</dsig:DigestValue>
+        <dsig:DigestValue>cUc7V/jjFLvx6gyH1NdmY3aqdoA+CVisfTfYgSUK5jA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -385,7 +385,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IHmZVwiIbxXLDNxRpPLJGmeSYJNzW8jcKDOknBOGto0=</dsig:DigestValue>
+        <dsig:DigestValue>UhNjLZKS49Wc1a9fRiorPljEir62ZKKGfb+EHSp3nw8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -397,7 +397,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+imFnrt1v9ThpdO9fRXOc9Vf4RBXE7dOFlQjiInkpkg=</dsig:DigestValue>
+        <dsig:DigestValue>tXucmhCLOLGMka+ZTDQI2DwG9IjKJxCTojcqxbGk8Qs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -409,7 +409,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bwsM7zeqlxbUaKw7hdpebX6OxkyJR9lrttLgji8BJfM=</dsig:DigestValue>
+        <dsig:DigestValue>JV86MwQbI165iL3eV7pTgHG1ofRZ/DrT/6JEeJOnOgg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -421,7 +421,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YJKjXHAoceBBSaizSjoNfxH3BuPQNF/cVtnkCh5scuc=</dsig:DigestValue>
+        <dsig:DigestValue>CR8iD97/WltcUPM8VrcN27GYSkaWtEXDY5JJV7p2Kmw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -433,7 +433,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aKf8PgwMt+E1DvtYB4aaoETybOeBOq/KmpkKELkUGPM=</dsig:DigestValue>
+        <dsig:DigestValue>C8MNz5bkbNHX+vL9XVHul6I+X3Q03dM351Xwk9YBlU0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -445,7 +445,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S78UpH/yzNm7ZuWkGf7jQGT83L14be3b6s0Mpk5a3UQ=</dsig:DigestValue>
+        <dsig:DigestValue>ndGE15QOUJxXmSv7lCemADnhv/JpU1Ie3ZZ/rxe+UiY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -457,19 +457,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wPZaazfn7M0JmKDP8MJEFTdKtONG/5DaZay3Z7TaK5M=</dsig:DigestValue>
+        <dsig:DigestValue>aw9uOzah5KLUmhOK1K+7pukeWECAaRNCByNNqZXniFc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Common.dll" size="251904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Common.dll" size="225280">
       <assemblyIdentity name="BizAPP.Runtime.Common" version="1.1.0.37" publicKeyToken="5CD91901593BA07F" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sa1R6HJ5tJS8X65+fbpCI5O8HVH529Q7WGhKIVFq/pQ=</dsig:DigestValue>
+        <dsig:DigestValue>YST4f6jaunJ7GStfrMJnFz1k3BwyapgqDNgJ3HsNkHs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -481,7 +481,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zHt136Jz5SoJauQs4Kx6BOVOdnnC0h6bZNJrEU8dUKE=</dsig:DigestValue>
+        <dsig:DigestValue>L8gzuAzmxa7a3frk7ac7xvJc8h/eThLEZBRlbrGg600=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -493,7 +493,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mJkc894X1XxSwygZUDFYdw0yJX59Hk6/CLvdYdySWds=</dsig:DigestValue>
+        <dsig:DigestValue>zU+lLk53YMdpGN6ZZl2VYst6xQWE/5M0ixetX9lpyng=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -505,55 +505,55 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>A2AELTmoXrc53hxQ0iOu67phNU7lGlYd5FrIB9HXlZA=</dsig:DigestValue>
+        <dsig:DigestValue>mvIFmIu7a79lpK4i8+FMIG6qMfwbgIWiJLc91Yy99MA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Core.Framework.dll" size="2090496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Core.Framework.dll" size="2096640">
       <assemblyIdentity name="BizAPP.Runtime.Core.Framework" version="1.1.0.37" publicKeyToken="5CD91901593BA07F" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ujV985O0fXkYQsKTgZ9ETPiplviY+7v9FNT91MUmmP0=</dsig:DigestValue>
+        <dsig:DigestValue>O3MKNOQi5bkQVj+8oZwMveBmVsVDlpAHMyf6d+w/gs8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Core.Framework.FileStore.dll" size="76288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Core.Framework.FileStore.dll" size="77312">
       <assemblyIdentity name="BizAPP.Runtime.Core.Framework.FileStore" version="1.1.0.37" publicKeyToken="5CD91901593BA07F" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>t8Hosp7sz3ZSG7ja5nTkVhA/tyxqq0Agj0nrIMssOjg=</dsig:DigestValue>
+        <dsig:DigestValue>KxZ1ZQ3VMxEs6G+P032sr6OvsU2Co4aK0gXaUBsfz2I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Core.Framework.Json.dll" size="154624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Core.Framework.Json.dll" size="164352">
       <assemblyIdentity name="BizAPP.Runtime.Core.Framework.Json" version="1.1.0.37" publicKeyToken="5CD91901593BA07F" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VGKK7G9KNNaDaDo6H34VsWNbZjx4E6ibloe90AxlCmM=</dsig:DigestValue>
+        <dsig:DigestValue>xTK7eurkMGPenw46GLtSqI3nEoqPYBrd5bmesOw3u8c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Core.Framework.Query.dll" size="528896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Core.Framework.Query.dll" size="532480">
       <assemblyIdentity name="BizAPP.Runtime.Core.Framework.Query" version="1.1.0.37" publicKeyToken="5CD91901593BA07F" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>40sUu50XhjYNNdrQk7AmCJ4S1NIrDb4PWGCY4pqA3w4=</dsig:DigestValue>
+        <dsig:DigestValue>VVzYzfsNHXpMalAqLpYmHjCJnktW0gm7PSAT10dBvns=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -565,7 +565,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PCIk/3CZkbxxPvvirszGz5LvmiWK1jEV0io2OO9MuXQ=</dsig:DigestValue>
+        <dsig:DigestValue>/EvyYd0kNzLTXLhU6hvVOpcP8erafvni/PWdeIP0ayM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -577,7 +577,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1Kc2h+szRssJnt83cs+IBBwhfC51mg94VhvZ8T+FGSQ=</dsig:DigestValue>
+        <dsig:DigestValue>UtuVlhQDEeUBjzyf90Jl6ymy7IasM71/xeSkphOGbD4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -589,19 +589,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>p1amQYolfqZ/f3CASZ3FgeS7kVcVXxT+XnH6wx3+f58=</dsig:DigestValue>
+        <dsig:DigestValue>g7cHnv5REpc8kOG9oqpKKedMXNFNXobz/C5BW6sJhVA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Metadata.POCO.dll" size="742400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Metadata.POCO.dll" size="747008">
       <assemblyIdentity name="BizAPP.Runtime.Metadata.POCO" version="1.1.0.37" publicKeyToken="9CB953FB35345810" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iCJJ2wjGkXYs8E4Mo3DVmbjS4Ruk5Sg1aH/g5t0WQ2w=</dsig:DigestValue>
+        <dsig:DigestValue>SLNSS9IQ8xPusT/sxmFa+N87xgpBxEZU8ypMK78kLPQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -613,7 +613,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>51wKGMY2WDh/nuhc9lVOlp+BchGdgdLcm77MZ5UR3U4=</dsig:DigestValue>
+        <dsig:DigestValue>acAlFfTBK9DYiihGHmc9XtL0z2wNIcT+4CtMNKY58cw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -625,7 +625,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9K0u82X5uLkwnEtlYD+xitBTF2F3AaYFNS7tZhg3ijE=</dsig:DigestValue>
+        <dsig:DigestValue>rAtp/Mnybhu4Z9YEeMIKjGtFVVaauwrl+xcd1h46h8A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -637,7 +637,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yTzkNjxIoayDziy+abbTx5K1wba68HmLy1WcGk8IGWs=</dsig:DigestValue>
+        <dsig:DigestValue>KFfQGoOgGomcQMRB+EB4TRjf0DoqfcKosB4b+FOYWjE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -649,19 +649,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F7/Yjb8XDvIWUtdKtwME//I4p7zT0CsK/iKLpgSb+ek=</dsig:DigestValue>
+        <dsig:DigestValue>+Msy1iknczlmo+ifRSP+LyM0it7SbwxjCCpVFfnF4ls=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Process.Metadata.dll" size="389632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BizAPP.Runtime.Process.Metadata.dll" size="437248">
       <assemblyIdentity name="BizAPP.Runtime.Process.Metadata" version="1.1.0.37" publicKeyToken="5CD91901593BA07F" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>T08BiBov2/0d5T/iU4MCyRE9J13k7+luBSPSSOm2Kyo=</dsig:DigestValue>
+        <dsig:DigestValue>IWUPVJlu+HOgb+ikg9cElGZ+bdTPxPw9D3ChHw9tltE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -673,7 +673,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>esbnnOwJ3dKl4zH6tvzZTYPKiit1jxM3x3aVAYnzUYM=</dsig:DigestValue>
+        <dsig:DigestValue>vYCCyTiqQtiaxFxcU4zaNrOcVTjVvu+zcxsgUk7nOOQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -685,7 +685,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EVsvMceVIbVhLBcq39Jce65dhuhCXvxMgL+F7KcdVZ8=</dsig:DigestValue>
+        <dsig:DigestValue>srhE8mpG14cUecWTCEnIorl9t/COYk4PYn00mC0lVk8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -697,7 +697,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tfaaaHXbj3/9cZI2u43q+R+2Axqy1KAQtvslcJ7V7Zw=</dsig:DigestValue>
+        <dsig:DigestValue>IpyWLofmOleHf948HsS2CfnLPQI7AN/Nai7pIXXSucQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -709,7 +709,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uNacRLhp4b+XjVkwt0z+Pw5LTmRtLsRZadsjFcPiSEc=</dsig:DigestValue>
+        <dsig:DigestValue>0B0TCpUhAC6B/repkoZ8sI270coNH2X/dMuhKNtthiE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -721,7 +721,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cU42X4Pkd8l4XvSj/WhUCZzfXEUn1P7MiTo7KD6gqTA=</dsig:DigestValue>
+        <dsig:DigestValue>kfpcnzM7f6wizTOJU4vOYi5S/fOTgxkLVjF+Yk/QBDo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1466,4 +1466,4 @@
       <dsig:DigestValue>wrhNL15H4AJGT35hlcgYRign21mbGTNLdzc/4+vKJ4Y=</dsig:DigestValue>
     </hash>
   </file>
-<publisherIdentity name="CN=APPPOINT\sara" issuerKeyHash="be85a3c1db69dbd298174c134c94dec958f54aa6" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>zUq0KDDecFIaMf295w38Vu6X4HhSbl2PNT3Ee0r4GG8=</DigestValue></Reference></SignedInfo><SignatureValue>QlJ7UB8mpipUe3oMzSMJub96KDdQzTLFfyx7E5zAsckczmgyU1iVQ9O6UL5QQ3EkMqmtyiMBxDoUcE5/tJjcKPcEbGzMJc+DO4d1dHf0z/d8HVNUlfARiYKmKa05dLJ4q4zV5eBgIQ5Db4hfOnZzaIiCe3lJ59/EMbpAGbNfOe4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3j1qzg/2CeMYmZc9hM8qxxg1nND6lhlW2d6DJ0i/gl2X75uM34gaUeLjzgFs3/YKqUaBD94R6vWyRtfPGaSmX9HmHyiR2HgRSgaGsBFpX+XwGBt/oLckgF68BLNT7cX4yXtgHrC81Ak9yim5Hp1jiQqnCBRrc7i248jIiMyCZw0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6f18f84a7bc43d358f5d6e5278e097ee56fc0de7bdfd311a5270de3028b44acd" Description="" Url=""><as:assemblyIdentity name="BizAPP.Web.UI.XBAP.exe" version="1.0.0.2" publicKeyToken="9b263cfc2e6f7aa0" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=APPPOINT\sara</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>GkIDeDNr8rODCEBua8Z8t0uKkkIM8Ia96oldHVFnmzM=</DigestValue></Reference></SignedInfo><SignatureValue>G87NYNmQwWlrxVRVizbwMGsKE+x1MU1nZSJQmccyWv7MGMi78eNO4uRpFMzpuDUYEguN8BwpYPfOPXlxaz921E9i6YRbRKg+aeXh5Bbf0vuS9D7cch6EV+PVTHU9V3uT8GbsvhQam3FV741F4WE1Vib7pOn/KaQ362nO7seQOv4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3j1qzg/2CeMYmZc9hM8qxxg1nND6lhlW2d6DJ0i/gl2X75uM34gaUeLjzgFs3/YKqUaBD94R6vWyRtfPGaSmX9HmHyiR2HgRSgaGsBFpX+XwGBt/oLckgF68BLNT7cX4yXtgHrC81Ak9yim5Hp1jiQqnCBRrc7i248jIiMyCZw0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQJIdqR+G7lqBPqI0BGBmXmTANBgkqhkiG9w0BAQsFADAlMSMwIQYDVQQDHhoAQQBQAFAAUABPAEkATgBUAFwAcwBhAHIAYTAeFw0xOTEyMTEwODE4MDBaFw0yMDEyMTAxNDE4MDBaMCUxIzAhBgNVBAMeGgBBAFAAUABQAE8ASQBOAFQAXABzAGEAcgBhMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDePWrOD/YJ4xiZlz2EzyrHGDWc0PqWGVbZ3oMnSL+CXZfvm4zfiBpR4uPOAWzf9gqpRoEP3hHq9bJG188ZpKZf0eYfKJHYeBFKBoawEWlf5fAYG3+gtySAXrwEs1PtxfjJe2AesLzUCT3KKbkenWOJCqcIFGtzuLbjyMiIzIJnDQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBANDXX88sNgf/muqOV4VOdxUGbSB3MXW+FCa7Bifr10sCq34xICBLZN3+lulhPXVhhzJcLmEUlwWJrFvFv6x7FNz3NOXGIdXuGWoWmbZR0rZKv7UtEi1yaU/0EbUEwiQsQezz2cNdVgpKTmBHoKJjyJSgDFHeuaqok8himycz7BVH</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=APPPOINT\sara" issuerKeyHash="d7a42e97b7358bdc0ed7b328aa3cc07aa464e216" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>6IXG22TNKS335FWMGNFaKZQsuT8aCQVjxyDtf6zvkf0=</DigestValue></Reference></SignedInfo><SignatureValue>EmP3hbWtj65gO8amKcnssEye9IwBNi9vgX3JME1k3lSJ4z0IIQRy6BJT14sJSXgoj+hydJwVYKROhvqifqj2I4+viYUH2qX7SwLZ5tDkRFsY3XkfnnAMczOwdNOjXDQ3NmHMXmrTlEaLXmE8mS0q5jPzVQS+EgjdWYPsCPcThZI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wYNJMziHHeyt5mnOJkmWfjnl6HWHDgIjs6poaLdIevEXue9drhTsbtAt9eWN+M3JrlAgDM4WD6UtcjkTlV/UCFZzUdToxWArsnc/ocqlo6Wbwega4vvOyVonFlvCkuTWH3Jd2qYuEOOgKKPoDGt2tbaPN8D5Ve84mLLs7GwIn6k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="fd91efac7fed20c76305091a3fb92c94295ad1188c55e4f72d29cd64dbc685e8" Description="" Url=""><as:assemblyIdentity name="BizAPP.Web.UI.XBAP.exe" version="1.0.0.2" publicKeyToken="a2192026fac1c666" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=APPPOINT\sara</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>uR77lnxV235mpwTn9DpNO9T08Dpn8lfnQexSYE3UH0k=</DigestValue></Reference></SignedInfo><SignatureValue>AR5lnsLaDME03lntxKMcjYrgGjSj08CPGlVGRFxN9gRh7l38Ed1tA7M6mQh4D4hN+N8Mk9/7jB92XYNZ05fSbfkasVWRfy3myQpmWDDyaKltBgNqnJM13Pk0X7Ko22KkaZQLFsch/YXo7yo5jo1YZutYTozoLSmuqZVhpw5lLkM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wYNJMziHHeyt5mnOJkmWfjnl6HWHDgIjs6poaLdIevEXue9drhTsbtAt9eWN+M3JrlAgDM4WD6UtcjkTlV/UCFZzUdToxWArsnc/ocqlo6Wbwega4vvOyVonFlvCkuTWH3Jd2qYuEOOgKKPoDGt2tbaPN8D5Ve84mLLs7GwIn6k=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQHyGSUODTs4ZOapi6PLlxtTANBgkqhkiG9w0BAQsFADAlMSMwIQYDVQQDHhoAQQBQAFAAUABPAEkATgBUAFwAcwBhAHIAYTAeFw0yMDEyMTIwNDQ0NDhaFw0yMTEyMTIxMDQ0NDhaMCUxIzAhBgNVBAMeGgBBAFAAUABQAE8ASQBOAFQAXABzAGEAcgBhMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBg0kzOIcd7K3mac4mSZZ+OeXodYcOAiOzqmhot0h68Re5712uFOxu0C315Y34zcmuUCAMzhYPpS1yOROVX9QIVnNR1OjFYCuydz+hyqWjpZvB6Bri+87JWicWW8KS5NYfcl3api4Q46Aoo+gMa3a1to83wPlV7ziYsuzsbAifqQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAE2NWBmxJmwfN/vjo3snX68mtrQg9iev5o9/tjuCDc+sGv0+QWhC/Jupw1Dy6I5u5GC7bfT8y6dNlXikq9DuOYMVc8qP/sGOoXG3YxGG32LNgwQ1pSh2N+8hG0qLbrWReinhwCVE5VOdyJa+gX1RyWelJEx2hhL8bT/Rgjcmqzv0</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

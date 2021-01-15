@@ -4,11 +4,412 @@
         <name>BizAPP.Abstractions</name>
     </assembly>
     <members>
+        <member name="T:BizAPP.Services.ApiControllerEnterpriseAttribute">
+            <summary>
+            Class ApiControllerEnterpriseAttribute.
+            Implements the <see cref="T:System.Attribute" />
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:BizAPP.Services.ApiControllerEnterpriseAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Services.ApiControllerEnterpriseAttribute"/> class.
+            </summary>
+            <param name="enterprise">The enterprise.</param>
+        </member>
+        <member name="P:BizAPP.Services.ApiControllerEnterpriseAttribute.Enterprise">
+            <summary>
+            Gets the enterprise.
+            </summary>
+            <value>The enterprise.</value>
+        </member>
+        <member name="T:BizAPP.Services.IParameterCacheWrapperService">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.Services.IParameterCacheWrapperService.GetParameterValue``1(System.String,System.String,System.Boolean@,``0)">
+            <summary>
+            Gets the parameter value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ruleName">Name of the rule.</param>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="exists">if set to <c>true</c> [exists].</param>
+            <param name="defaultValue">The default value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.Services.IQueryExecutionService">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySPRaw(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the stored procedure.
+            </summary>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySP``1(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the query.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySPFirstOrDefault``1(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SPName">Name of the sp.</param>
+            <param name="outParameters">The out parameters.</param>
+            <param name="inParameters">The in parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryRaw(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query.
+            </summary>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryRaw(System.String,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query
+            </summary>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryResultsToTable(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries the results to table.
+            </summary>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryResultsToTable(System.String,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query
+            </summary>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryFirstOrDefault``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryFirstOrDefault``1(System.String,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query and returns list of values.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``1(System.String,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query and returns list of values.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``3(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,System.Func{``0,``1,``2},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst">The type of the first.</typeparam>
+            <typeparam name="TSecond">The type of the second.</typeparam>
+            <typeparam name="TReturn">The type of the return.</typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="map">The map.</param>
+            <param name="splitOn">The split on.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``3(System.String,System.Collections.Hashtable,System.Func{``0,``1,``2},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="map"></param>
+            <param name="splitOn"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``4(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,System.Func{``0,``1,``2,``3},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst">The type of the first.</typeparam>
+            <typeparam name="TSecond">The type of the second.</typeparam>
+            <typeparam name="TThird">The type of the third.</typeparam>
+            <typeparam name="TReturn">The type of the return.</typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="map">The map.</param>
+            <param name="splitOn">The split on.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``4(System.String,System.Collections.Hashtable,System.Func{``0,``1,``2,``3},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="map"></param>
+            <param name="splitOn"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``5(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,System.Func{``0,``1,``2,``3,``4},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst">The type of the first.</typeparam>
+            <typeparam name="TSecond">The type of the second.</typeparam>
+            <typeparam name="TThird">The type of the third.</typeparam>
+            <typeparam name="TFourth">The type of the fourth.</typeparam>
+            <typeparam name="TReturn">The type of the return.</typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="map">The map.</param>
+            <param name="splitOn">The split on.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``5(System.String,System.Collections.Hashtable,System.Func{``0,``1,``2,``3,``4},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <typeparam name="TFourth"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="map"></param>
+            <param name="splitOn"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``6(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,System.Func{``0,``1,``2,``3,``4,``5},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst">The type of the first.</typeparam>
+            <typeparam name="TSecond">The type of the second.</typeparam>
+            <typeparam name="TThird">The type of the third.</typeparam>
+            <typeparam name="TFourth">The type of the fourth.</typeparam>
+            <typeparam name="TFifth">The type of the fifth.</typeparam>
+            <typeparam name="TReturn">The type of the return.</typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="map">The map.</param>
+            <param name="splitOn">The split on.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``6(System.String,System.Collections.Hashtable,System.Func{``0,``1,``2,``3,``4,``5},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <typeparam name="TFourth"></typeparam>
+            <typeparam name="TFifth"></typeparam>
+            <typeparam name="TReturn"></typeparam>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="map"></param>
+            <param name="splitOn"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``7(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,System.Func{``0,``1,``2,``3,``4,``5,``6},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst">The type of the first.</typeparam>
+            <typeparam name="TSecond">The type of the second.</typeparam>
+            <typeparam name="TThird">The type of the third.</typeparam>
+            <typeparam name="TFourth">The type of the fourth.</typeparam>
+            <typeparam name="TFifth">The type of the fifth.</typeparam>
+            <typeparam name="TSixth">The type of the sixth.</typeparam>
+            <typeparam name="TReturn">The type of the return.</typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="map">The map.</param>
+            <param name="splitOn">The split on.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.Query``8(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,System.Func{``0,``1,``2,``3,``4,``5,``6,``7},System.String,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Queries using the specified SQL.
+            </summary>
+            <typeparam name="TFirst">The type of the first.</typeparam>
+            <typeparam name="TSecond">The type of the second.</typeparam>
+            <typeparam name="TThird">The type of the third.</typeparam>
+            <typeparam name="TFourth">The type of the fourth.</typeparam>
+            <typeparam name="TFifth">The type of the fifth.</typeparam>
+            <typeparam name="TSixth">The type of the sixth.</typeparam>
+            <typeparam name="TSeventh">The type of the seventh.</typeparam>
+            <typeparam name="TReturn">The type of the return.</typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="map">The map.</param>
+            <param name="splitOn">The split on.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryScalar``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.QueryScalar``1(System.String,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the query and return single or default value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.ExecuteNonQuery(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="SQL">The SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.ExecuteNonQuery(System.String,System.Collections.Hashtable,BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet)">
+            <summary>
+            Executes the non query.
+            </summary>
+            <param name="bsqlEnterpriseId"></param>
+            <param name="parameters"></param>
+            <param name="tx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.ExecuteInTransaction(System.Action{BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet})">
+            <summary>
+            Executes queries in transaction.
+            </summary>
+            <param name="tx">The tx.</param>
+        </member>
+        <member name="M:BizAPP.Services.IQueryExecutionService.ExecuteInTransaction``1(System.Func{BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet,``0})">
+            <summary>
+            Executes queries in transaction and returns callback value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tx">The tx.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BizAPP.Services.ISessionServiceWrapperService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:BizAPP.Services.ISessionServiceWrapperService.Instance">
+            <summary>
+            Gets the session service.
+            </summary>
+            <value>
+            The session service.
+            </value>
+        </member>
+        <member name="T:BizAPP.Services.ITenantResolverService">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BizAPP.Services.ITenantResolverService.ResolveCurrentRequestTenant">
+            <summary>
+            Resolves the current request tenant.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.ITenantResolverService.ResolveTenant(System.Uri)">
+            <summary>
+            Resolves the tenant.
+            </summary>
+            <param name="requestUrl">The request URL.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.ITenantResolverService.ResolveTenant(System.String,System.Int32)">
+            <summary>
+            Resolves the tenant.
+            </summary>
+            <param name="enterpriseName">The enterprise name.</param>
+            <param name="tenantId">The tenant identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.Services.ITenantResolverService.GetCurrentEnterprise">
+            <summary>
+            Enterprises from URL.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
         <member name="T:BizAPP.BizAPPOptions">
             <summary>
             </summary>
         </member>
-        <member name="P:BizAPP.BizAPPOptions.EnterpriseName">
+        <member name="P:BizAPP.BizAPPOptions.EnterpriseNames">
             <summary>
             Gets or sets the name of the enterprise.
             </summary>
@@ -48,6 +449,18 @@
             The additional lookup directories.
             </value>
         </member>
+        <member name="P:BizAPP.BizAPPOptions.EnableRequestResponseTracing">
+            <summary>
+            Gets or sets a value indicating whether [enable request response tracing].
+            </summary>
+            <value><c>true</c> if [enable request response tracing]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:BizAPP.BizAPPOptions.EnableUserAgentValidationFilter">
+            <summary>
+            Gets or sets a value indicating whether [enable user agent validation filter].
+            </summary>
+            <value><c>true</c> if [enable user agent validation filter]; otherwise, <c>false</c>.</value>
+        </member>
         <member name="T:BizAPP.BizAPPTenantOptions">
              <summary>
             
@@ -60,127 +473,6 @@
             <value>
             The tenancy ignore domain segments.
             </value>
-        </member>
-        <member name="T:BizAPP.Services.IQueryExecutionService">
-             <summary>
-            
-             </summary>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySPRaw(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
-            <summary>
-            Executes the stored procedure.
-            </summary>
-            <param name="SPName">Name of the sp.</param>
-            <param name="outParameters">The out parameters.</param>
-            <param name="inParameters">The in parameters.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySP``1(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
-            <summary>
-            Executes the query.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="SPName">Name of the sp.</param>
-            <param name="outParameters">The out parameters.</param>
-            <param name="inParameters">The in parameters.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.QuerySPFirstOrDefault``1(System.String,System.Collections.Hashtable,System.Collections.Hashtable)">
-            <summary>
-            Executes the query and return single or default value.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="SPName">Name of the sp.</param>
-            <param name="outParameters">The out parameters.</param>
-            <param name="inParameters">The in parameters.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.QueryRaw(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
-            <summary>
-            Executes the query.
-            </summary>
-            <param name="SQL">The SQL.</param>
-            <param name="parameters">The parameters.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.QueryFirstOrDefault``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
-            <summary>
-            Executes the query and return single or default value.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="SQL">The SQL.</param>
-            <param name="parameters">The parameters.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.Query``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
-            <summary>
-            Executes the query and returns list of values.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="SQL">The SQL.</param>
-            <param name="parameters">The parameters.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.QueryScalar``1(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
-            <summary>
-            Executes the query and return single or default value.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="SQL">The SQL.</param>
-            <param name="parameters">The parameters.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.ExecuteNonQuery(BizAPP.Common.Query.BSQLObject,System.Collections.Hashtable)">
-            <summary>
-            Executes the non query.
-            </summary>
-            <param name="SQL">The SQL.</param>
-            <param name="parameters">The parameters.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.IQueryExecutionService.Execute(System.Action{BizAPP.Runtime.Core.Service.Database.IDatabaseOperationSet})">
-            <summary>
-            Executes queries in transaction.
-            </summary>
-            <param name="tx">The tx.</param>
-        </member>
-        <member name="T:BizAPP.Services.ISessionServiceWrapperService">
-             <summary>
-            
-             </summary>
-        </member>
-        <member name="P:BizAPP.Services.ISessionServiceWrapperService.Instance">
-            <summary>
-            Gets the session service.
-            </summary>
-            <value>
-            The session service.
-            </value>
-        </member>
-        <member name="T:BizAPP.Services.ITenantResolverService">
-             <summary>
-            
-             </summary>
-        </member>
-        <member name="M:BizAPP.Services.ITenantResolverService.ResolveCurrentRequestTenant">
-            <summary>
-            Resolves the current request tenant.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.ITenantResolverService.ResolveTenant(System.Uri)">
-            <summary>
-            Resolves the tenant.
-            </summary>
-            <param name="requestUrl">The request URL.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.Services.ITenantResolverService.ResolveTenant(System.Int32)">
-            <summary>
-            Resolves the tenant.
-            </summary>
-            <param name="tenantId">The tenant identifier.</param>
-            <returns></returns>
         </member>
     </members>
 </doc>

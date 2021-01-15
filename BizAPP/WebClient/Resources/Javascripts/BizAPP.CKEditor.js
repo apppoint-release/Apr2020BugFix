@@ -91,6 +91,9 @@ BizAPP.UI.TextEditor.OnBlurHandler = function (e, options) {
     var text = e.editor.getData();
     var $richtextInstance = CKEDITOR.instances["bbcode_field"];
     var $textarea = $('.RichTextEx[bza-ctrlid="' + options.ctrlId + '"]').find('[name="bbcode_field"]');
+	if ($textarea.length == 0) {
+		$textarea = $($richtextInstance.element);
+	}
     var roid = $textarea.attr('roid');
     var name = $textarea.attr('ctrlname');
 

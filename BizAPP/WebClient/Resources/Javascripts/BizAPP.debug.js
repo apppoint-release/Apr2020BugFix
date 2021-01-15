@@ -11507,7 +11507,7 @@ BizAPP.UI = {
 					showTinyBox(data[1]);
 				else if (options.inlinePopup) { }
 				else {
-					if (!this.selector && (!options || !options.selector)) {
+					if (!options || !options.selector) {
 						this.selector = '#' + $(data[1]).attr('id').replace(/:/g, '\\:');
 					}
 
@@ -11525,13 +11525,13 @@ BizAPP.UI = {
 							else
 								$(options.selector).html(data[1]);
 						}
-						BizAPP.UI.TabControl.ResponsiveInit();
 						BizAPP.UI.InlinePopup._setTINYPosition(true);
+						BizAPP.UI.TabControl.ResponsiveInit();						
 					}
 					else if (this.selector) {
 						$(this.selector).html(data[1]);
-						BizAPP.UI.TabControl.ResponsiveInit();
 						BizAPP.UI.InlinePopup._setTINYPosition(true);
+						BizAPP.UI.TabControl.ResponsiveInit();						
 					}
 				}
 			}
@@ -12668,8 +12668,8 @@ BizAPP.UI.InlinePopup = {
 				if (options.stropenjs)
 					execute(options.stropenjs);
 
-				BizAPP.UI.TabControl.ResponsiveInit();
 				BizAPP.UI.InlinePopup._setTINYPosition();
+				BizAPP.UI.TabControl.ResponsiveInit();
 
 				//if (options.draggable)
 				//	$(a.tinner()).closest('.tbox').draggable({
@@ -13017,6 +13017,11 @@ BizAPP.UI.Textbox = {
 		var ctrl = $(options.selector);
 		var minLength = options.minLength;
 		if (minLength == undefined) minLength = 1;
+		var tpl= '';
+		var tplAttr= ctrl.attr('tpl');
+		if(tplAttr !="" && typeof tplAttr !== "undefined" )
+			tpl = tplAttr;
+				
 		ctrl.autocomplete({
 			minLength: minLength,
 			source: function (request, response) {
@@ -13044,21 +13049,30 @@ BizAPP.UI.Textbox = {
 						if (ctrl.attr('bza_qid'))
 							a = $.map(JSON.parse(data[1]), function (item) {
 								var value = '';
-								if (fields.length == 1)
-									value = item[fields[0]];
+								                                                                                                                                var value = '';
+								if(tpl!='' && typeof tpl !== "undefined"){
+									value = tpl;
+									$.each(fields, function (index) {                                                                                                                                                                                 
+										value = value.replace("#" + this + "#", item[this]);                                                                                    
+									});
+								}
 								else {
-									if (options.format) {
-										if (!value) value = options.format;
-										$.each(fields, function (index) {
-											value = value.replace('{' + index.toString() + '}', '{0}');
-											value = value.format(item[fields[index]]);
-										});
-									}
+									if (fields.length == 1)
+										value = item[fields[0]];
 									else {
-										$.each(fields, function () {
-											if (value) value += ', ';
-											value += this + ' : ' + item[this];
-										});
+										if (options.format) {
+											if (!value) value = options.format;
+											$.each(fields, function (index) {
+												value = value.replace('{' + index.toString() + '}', '{0}');
+												value = value.format(item[fields[index]]);
+											});
+										}
+										else {
+											$.each(fields, function () {
+												if (value) value += ', ';
+												value += this + ' : ' + item[this];
+											});
+										}
 									}
 								}
 								if (options.userStatus == 'true')
@@ -13073,7 +13087,7 @@ BizAPP.UI.Textbox = {
 						response(a);
 					});
 			},
-			position: { collision: "flip" },
+			position: { my : "right top", at: "right bottom" },
 			select: function (event, ui) {
 				console.log(ui.item);
 				options.selectCallback(event, ui);
@@ -13086,13 +13100,14 @@ BizAPP.UI.Textbox = {
 			}
 		});
 
-        /*$["ui"]["autocomplete"].prototype["_renderItem"] = function (ul, item) {
-            return $('<li class="ui-menu-item"></li>')
-            .data("item.autocomplete", item)
-            .append(item.label)
-            .appendTo(ul);
-        };*/
-
+		if(tpl!=''){
+		$["ui"]["autocomplete"].prototype["_renderItem"] = function (ul, item) {
+			return $("<li></li>")
+				.data("item.autocomplete", item)
+				.append( $( "<a></a>" ).html( item.label ) )
+				.appendTo(ul);
+			};
+		}
 	},
 
 	StaticEnhanceAutoComplete: function (options) {
@@ -13634,15 +13649,25 @@ BizAPP.UI.Tree = {
 
 //#region LINK CONTROL
 BizAPP.UI.LinkControl = {
+	_states: [],
 	customLink: function (link, event, serializedArgs, pmptMsg) {
 		if (pmptMsg) {
+			BizAPP.UI.LinkControl._states.push(serializedArgs);
 			BizAPP.UI.InlinePopup.Confirm({
 				message: pmptMsg,
 				type: "Confirm",
 				fnOkOnclick: function () {
 					if (BizAPP.UI.InlinePopup.procVisible)
 						ProcessingStatus(true, true);
-					BizAPP.UI.LinkControl.customLink1(link, event, serializedArgs);
+					if (BizAPP.UI.LinkControl._states) {
+						$.each(BizAPP.UI.LinkControl._states, function (index, value) {
+							BizAPP.UI.LinkControl.customLink1(link, event, value);
+						});
+						BizAPP.UI.LinkControl._states = [];
+					}
+				},
+				fnCancelOnclick: function () {
+					BizAPP.UI.LinkControl._states = [];
 				}
 			});
 		}
@@ -14115,8 +14140,10 @@ BizAPP.UI.Tab = {
 		}
 
 		var pageArgs = tabPage.attr('bza-args').split('[VS]');
-		callShowTabPage(event, $(table).attr('bza-args'), tabPage.attr('groupid'), pageArgs[0], tabPage[0], pageArgs[1]);
-		sltTab(tabPage[0]);
+		if (pageArgs && pageArgs.length > 1) {
+			callShowTabPage(event, $(table).attr('bza-args'), tabPage.attr('groupid'), pageArgs[0], tabPage[0], pageArgs[1]);
+			sltTab(tabPage[0]);
+		}
 	}
 }
 
@@ -14767,7 +14794,26 @@ BizAPP.UI.Grid = {
 
 		if (grid.closest('.tinner').length)
 			BizAPP.UI.InlinePopup._setTINYPosition(true);
+
+		BizAPP.UI.Grid.EnableTableContentScroll(grid);
 	},
+	EnableTableContentScroll: function ($grid) {
+		var $table = $grid.find('[onclick*="grdClick"]');
+		var _height = $table.attr('contentheight');
+		if (!_height) {
+			_height = $table.closest('[contentheight]').attr('contentheight');
+		}
+		if (!_height) return;
+
+		var $parent = $table.parent();
+		var $bodyCells = $table.find('tbody > tr:eq(4)').children();
+		if (!$bodyCells.length) {
+			$parent.css('height', '150px');
+		}
+
+		$parent.css('max-height', _height + 'px');
+		$parent.css('overflow-y', 'auto');
+	},	
 	PreProcessStub: function (selector) { },
 	EnhanceGridFilter: function (option) {
 		if (isIE() == 8) return;
@@ -14810,6 +14856,21 @@ BizAPP.UI.Grid = {
 							tb.val(tb.val().replace(/^\,/g, '').replace(/\,$/g, ''));
 						}
 					});
+
+					//Update the filter popup height respective to the grid
+					try {
+						var $table = $col.closest('[contentheight]');
+						if ($table != undefined && $table.length) {
+							var visibleHeight = $table.attr('contentheight');
+							if (visibleHeight) {
+								var newHeight = visibleHeight - 160;// handle gap/margin/padding
+								var filterValues = $col.find('.allowed-values');
+								filterValues.css('max-height', newHeight + 'px');
+							}
+						}
+					} catch (ex) {
+						logError('failed to resize the grid filter popup', ex);
+					}
 				}
 			});
 			BizAPP.UI.Grid.DisplayPreSelectedFilter($(th));

@@ -389,3 +389,11 @@ span.bza-filter-icon.filter-icon-visible.filter-icon-fa {
     padding: 0 15px;
   }
 }
+
+.fieldPickerDropdown.show { 
+	display: block !important; 
+}
+
+.fieldPickerDropdown.dropdown-menu { 
+	display: none; 
+}

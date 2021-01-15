@@ -974,8 +974,10 @@ function CallGPQGetFields(chc, event) {
 		var afs = ''
 		queryParams.additionalFields = []
 		_.each(af, function (o, k) {
-			if(o.data.newtext == undefined)
-				o.data.newtext = o.data.text = o.data.key.replace(/\./g,' ')
+			if(o.data.newtext == undefined) {
+				o.data.newtext = o.data.text;
+				o.data.text = o.data.key.replace(/\./g,' ');
+			}
  			queryParams.additionalFields.push(o.data)
 			afs += o.data.key + "[_TVS]" + o.data.newtext + "[_IS]";
 		})

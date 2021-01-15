@@ -17,33 +17,18 @@
             <param name="bzaOptions">The bza options.</param>
             <param name="logger">The logger.</param>
             <returns></returns>
-            <exception cref="T:System.Exception">Unable to get tenant service for enterprise with name - {bzaOptions.EnterpriseName}</exception>
+            <exception cref="T:System.Exception">
+            Unable to get tenant service for enterprise with name - {bzaOptions.EnterpriseName}
+            </exception>
         </member>
-        <member name="M:BizAPP.WebAPI.Host.BizAPPExtensions.GetSolutionPartsUsingMetadata(BizAPP.BizAPPOptions,System.String,BizAPP.Runtime.Core.RuntimeBootstrap,BizAPP.Runtime.Core.RuntimeContext,Microsoft.Extensions.Logging.ILogger)">
+        <member name="M:BizAPP.WebAPI.Host.BizAPPExtensions.GetSolutionPartsUsingMetadata(BizAPP.BizAPPOptions,System.String,BizAPP.Runtime.Core.RuntimeBootstrap,Microsoft.Extensions.Logging.ILogger)">
             <summary>
             Gets the solution parts using metadata.
             </summary>
             <param name="options">The options.</param>
             <param name="enterpriseName">Name of the enterprise.</param>
             <param name="rbs">The RBS.</param>
-            <param name="runtimeContext">The runtime context.</param>
             <param name="logger">The logger.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.WebAPI.Host.BizAPPExtensions.GetSolutionParts(BizAPP.BizAPPOptions,System.String,BizAPP.Runtime.Core.RuntimeContext,Microsoft.Extensions.Logging.ILogger)">
-            <summary>
-            Gets the solution parts.
-            </summary>
-            <param name="options">The options.</param>
-            <param name="enterpriseName">Name of the enterprise.</param>
-            <param name="runtimeContext">The runtime context.</param>
-            <param name="logger">The logger.</param>
-            <returns></returns>
-        </member>
-        <member name="M:BizAPP.WebAPI.Host.BizAPPExtensions.GetSolutionPartsQuery">
-            <summary>
-            Gets the solution parts query.
-            </summary>
             <returns></returns>
         </member>
         <member name="T:BizAPP.WebAPI.Host.JWTExtensions">
@@ -134,28 +119,28 @@
             Class Startup.
             </summary>
         </member>
-        <member name="M:BizAPP.WebAPI.Host.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+        <member name="M:BizAPP.WebAPI.Host.Startup.#ctor(Microsoft.Extensions.Logging.ILogger{BizAPP.WebAPI.Host.Startup},Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
             <summary>
-            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.Host.Startup" /> class.
+            Initializes a new instance of the <see cref="T:BizAPP.WebAPI.Host.Startup"/> class.
             </summary>
             <param name="configuration">The configuration.</param>
             <param name="env">The env.</param>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.Startup.Logger">
+            <summary>Gets the logger.</summary>
+            <value>The logger.</value>
         </member>
         <member name="P:BizAPP.WebAPI.Host.Startup.Configuration">
             <summary>
             Gets the configuration.
             </summary>
-            <value>
-            The configuration.
-            </value>
+            <value>The configuration.</value>
         </member>
         <member name="P:BizAPP.WebAPI.Host.Startup.HostingEnvironment">
             <summary>
             Gets the hosting environment.
             </summary>
-            <value>
-            The hosting environment.
-            </value>
+            <value>The hosting environment.</value>
         </member>
         <member name="M:BizAPP.WebAPI.Host.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
@@ -195,6 +180,86 @@
             </summary>
             <param name="cancellationToken">Indicates that the shutdown process should no longer be graceful.</param>
             <returns></returns>
+        </member>
+        <member name="T:BizAPP.Filters.SwaggerEnterpriseFilter">
+            <summary>
+            Class SwaggerEnterpriseFilter.
+            Implements the <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.IDocumentFilter" />
+            </summary>
+            <seealso cref="T:Swashbuckle.AspNetCore.SwaggerGen.IDocumentFilter" />
+        </member>
+        <member name="M:BizAPP.Filters.SwaggerEnterpriseFilter.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Filters.SwaggerEnterpriseFilter"/> class.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:BizAPP.Filters.SwaggerEnterpriseFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            Applies the specified swagger document.
+            </summary>
+            <param name="swaggerDoc">The swagger document.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="F:BizAPP.Filters.SwaggerEnterpriseFilter._services">
+            <summary>
+            The services
+            </summary>
+        </member>
+        <member name="T:BizAPP.Filters.ValidateModelStateFilter">
+            <summary>
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute"/>
+        </member>
+        <member name="M:BizAPP.Filters.ValidateModelStateFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            </summary>
+            <param name="context"></param>
+            <inheritdoc/>
+        </member>
+        <member name="T:BizAPP.Middleware.RequestResponseLoggingMiddleware">
+            <summary>
+            Class RequestResponseLoggingMiddleware. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:BizAPP.Middleware.RequestResponseLoggingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Middleware.RequestResponseLoggingMiddleware" /> class.
+            </summary>
+            <param name="next">The next.</param>
+            <param name="loggerFactory">The logger factory.</param>
+        </member>
+        <member name="M:BizAPP.Middleware.RequestResponseLoggingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,BizAPP.Services.ISessionServiceWrapperService)">
+            <summary>
+            Invokes the specified context.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="ssw">The SSW.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:BizAPP.Middleware.RequestResponseLoggingMiddleware.FormatRequest(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Formats the request.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>Task&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:BizAPP.Middleware.RequestResponseLoggingMiddleware.FormatResponse(Microsoft.AspNetCore.Http.HttpResponse)">
+            <summary>
+            Formats the response.
+            </summary>
+            <param name="response">The response.</param>
+            <returns>Task&lt;System.String&gt;.</returns>
+        </member>
+        <member name="F:BizAPP.Middleware.RequestResponseLoggingMiddleware.next">
+            <summary>
+            The next
+            </summary>
+        </member>
+        <member name="F:BizAPP.Middleware.RequestResponseLoggingMiddleware.logger">
+            <summary>
+            The logger
+            </summary>
         </member>
     </members>
 </doc>

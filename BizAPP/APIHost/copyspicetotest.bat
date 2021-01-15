@@ -1,0 +1,1 @@
+robocopy . \\192.168.2.105\k$\views\devrelease\BizAPP\APIHost SpiceJet.Loyalty.WebAPI.* /z

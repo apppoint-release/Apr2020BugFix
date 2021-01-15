@@ -7,6 +7,26 @@
         <member name="T:SpiceJet.Loyalty.LoyaltyMgmtVNextController">
             <summary>
             </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
+            <summary>
+            </summary>
         </member>
         <member name="F:SpiceJet.Loyalty.LoyaltyMgmtVNextController._logger">
             <summary>
@@ -19,10 +39,56 @@
             </summary>
             <param name="loggerFactory">The logger factory.</param>
         </member>
-        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.GetVersion">
+        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.GetMemberDetails(BizAPP.Services.IQueryExecutionService,System.String)">
             <summary>
-            Login
+            Gets the member details.
             </summary>
+            <param name="qes">The qes.</param>
+            <param name="membernumber">The membernumber.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.EnrollMember(BizAPP.Services.IQueryExecutionService,BizAPP.Services.IParameterCacheWrapperService,SpiceJet.Loyalty.LoyaltyMgmtVNextController.EnrollMemberInfo.Request.MemberInfo)">
+            <summary>
+            Enrolls the member.
+            </summary>
+            <param name="qes">The qes.</param>
+            <param name="pcws">The PCWS.</param>
+            <param name="">The .</param>
+            <param name="memberInfo">The member information.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.GetActivityTransactions(BizAPP.Services.IQueryExecutionService,System.String)">
+            <summary>
+            Gets the activity transactions.
+            </summary>
+            <param name="qes">The qes.</param>
+            <param name="membernumber">The membernumber.</param>
+            <returns></returns>
+            <exception cref="T:System.Exception">
+            Unable to update subscription type of member with member id - MemberId={memberId}
+            </exception>
+        </member>
+        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.FetchMemberDetails(BizAPP.Services.IQueryExecutionService,System.String)">
+            <summary>
+            Gets the member details.
+            </summary>
+            <param name="qes">The qes.</param>
+            <param name="membernumber">The membernumber.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.GetRewardCatalogs(BizAPP.Services.IQueryExecutionService)">
+            <summary>
+            Gets the reward catalogs.
+            </summary>
+            <param name="qes">The qes.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SpiceJet.Loyalty.LoyaltyMgmtVNextController.SearchMember(BizAPP.Services.IQueryExecutionService,System.String)">
+            <summary>
+            Gets the member details.
+            </summary>
+            <param name="qes">The qes.</param>
+            <param name="membernumber">The membernumber.</param>
             <returns></returns>
         </member>
         <member name="T:BizAPP.ControllerExtensions">
@@ -30,7 +96,7 @@
             Class ControllerExtensions.
             </summary>
         </member>
-        <member name="M:BizAPP.ControllerExtensions.Json(Microsoft.AspNetCore.Mvc.ControllerBase,System.String)">
+        <member name="M:BizAPP.ControllerExtensions.JsonResult(Microsoft.AspNetCore.Mvc.ControllerBase,System.String)">
             <summary>
             Returns Json content.
             </summary>
@@ -38,7 +104,7 @@
             <param name="json">The json.</param>
             <returns>Microsoft.AspNetCore.Mvc.ActionResult.</returns>
         </member>
-        <member name="M:BizAPP.ControllerExtensions.Json(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
+        <member name="M:BizAPP.ControllerExtensions.JsonResult(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
             <summary>
             Returns Json content.
             </summary>
@@ -46,24 +112,21 @@
             <param name="json">The json.</param>
             <returns></returns>
         </member>
-        <member name="T:BizAPP.Utils.TokenUtils">
+        <member name="M:BizAPP.ControllerExtensions.BadRequestJsonResult(Microsoft.AspNetCore.Mvc.ControllerBase,System.String)">
             <summary>
-            Class TokenUtils.
+            Bads the request json result.
             </summary>
+            <param name="context">The context.</param>
+            <param name="json">The json.</param>
+            <returns></returns>
         </member>
-        <member name="M:BizAPP.Utils.TokenUtils.GenerateRefreshTokenBytes">
+        <member name="M:BizAPP.ControllerExtensions.ServerError(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
             <summary>
-            Generates the refresh bytes.
+            Servers the error.
             </summary>
-            <returns>System.String.</returns>
-        </member>
-        <member name="M:BizAPP.Utils.TokenUtils.GenerateJwtToken(BizAPP.WebAPI.JWTOptions,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
-            <summary>
-            Generates the JWT token.
-            </summary>
-            <param name="jwtOptions">The JWT options.</param>
-            <param name="claims">The claims.</param>
-            <returns>Task&lt;System.ValueTuple&lt;System.String, DateTime&gt;&gt;.</returns>
+            <param name="context">The context.</param>
+            <param name="json">The json.</param>
+            <returns></returns>
         </member>
     </members>
 </doc>

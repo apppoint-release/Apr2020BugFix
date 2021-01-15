@@ -482,6 +482,28 @@
             var htmlStr = '<span style="max-width: 275px; color: black;font-family: Calibri;font-size: .9rem;line-height: 1.5;text-align: left;">{0}</span>'.format($('#lblPwHint').html());
             BizAPP.MenuPopup.Create({ html: htmlStr, selector: $('#pwreset').get(0), mode: 'open', position: 'bottom', callback: function () { e.stopPropagation(); } });
         }
+
+        function ValidateSignupForm() {
+            var email = $('#regemail').val(),
+                name = $('#fn').val(),
+                captcha = $('#defaultReal').val();
+
+            if (!email) {
+                alert('Please specify Email.');
+                return false;
+            }
+            if (!name) {
+                alert('Please specify Name.');
+                return false;
+            }
+            if (!captcha) {
+                alert('Please specify Captcha.');
+                return false;
+            }
+
+            ToggleSignUpPanel(true);
+            return true;
+        }
     </script>
 </head>
 <body onkeydown="ProcessKey( event );" onkeypress="ProcessKey( event );">
@@ -659,7 +681,7 @@
                                     <input type="text" id="defaultReal" name="defaultReal" placeholder="Enter the letters displayed above" />
                                     <asp:HiddenField ID="HiddenField1" runat="server" />
                                     <div>
-                                        <asp:Button ID="btnRegSubmit" runat="server" Text="Create Account" Style="float: inherit; margin-bottom: 10px;" OnClientClick="ToggleSignUpPanel(true);" CssClass="btn-submit" OnClick="btnRegSubmit_Click" />
+                                        <asp:Button ID="btnRegSubmit" runat="server" Text="Create Account" Style="float: inherit; margin-bottom: 10px;" OnClientClick="return ValidateSignupForm();" CssClass="btn-submit" OnClick="btnRegSubmit_Click" />
                                     </div>
                                     <span id="spnRegSocial" runat="server">Signup using 
                                         <asp:Button ID="regMicrosoft" runat="server" ToolTip="Sign-up using Windows" class="socialwindows" Text="&#xf17a;" CommandArgument="microsoft" formnovalidate></asp:Button>

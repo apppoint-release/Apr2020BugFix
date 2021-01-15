@@ -9,6 +9,8 @@ BEGIN
 	SET NOCOUNT ON;
 	SELECT 
 		u.hashedpassword as hashedpassword,
+		isnull(u.dateformat,c0.dateformat) as dateformat,
+		isnull(u.timestampformat,c0.timestampformat) as timestampformat,
 		c0.[companypro_name] as 'company',
 		c0.active as 'companyactive',
 		(

@@ -70,7 +70,8 @@ function Install-Services( $installPath, $serviceUser, $serviceUserPwd )
     Install-Service $installPath "BizAPP.Runtime.LicenseHost.exe" "BizAPP-$buildPrefix-LicenseService" "BizAPP-$buildPrefix-LicenseService" $serviceUser $serviceUserPwd
     Install-Service $installPath "BizAPP.Runtime.SessionStateManager.exe" "BizAPP-$buildPrefix-SessionStateManager" "BizAPP-$buildPrefix-SessionStateManager" $serviceUser $serviceUserPwd
     Install-Service $installPath "BizAPP.Runtime.AutoUpdater.exe" "BizAPP-$buildPrefix-AutoUpdater" "BizAPP-$buildPrefix-AutoUpdater" $serviceUser $serviceUserPwd
-
+	Install-WinService $installPath "APIHost\BizAPP.WebAPI.Host.Service.exe" "BizAPP-$buildPrefix-APIHost" "BizAPP-$buildPrefix-APIHost" $serviceUser $serviceUserPwd
+	
     # install bootstrap.
 	Install-WinService $installPath "BizAPP.BootstrapService.exe" "BizAPP-$buildPrefix-Bootstrap" "BizAPP-$buildPrefix-Bootstrap" $serviceUser $serviceUserPwd
 	
@@ -89,8 +90,8 @@ function Install-Services( $installPath, $serviceUser, $serviceUserPwd )
 	
 			$winPath = $env:windir	
 			$winPath = Join-Path $winPath "system32\sc.exe"
-			Start-Process -FilePath $winPath -WindowStyle Hidden -ArgumentList "config BizAPP-$buildPrefix-RoleService depend= `"bizapp-$buildPrefix-backplane-9036`"/`"bizapp-$buildPrefix-backplane-9035`"" -Wait -PassThru
-			Start-Process -FilePath $winPath -WindowStyle Hidden -ArgumentList "config BizAPP-$buildPrefix-SessionStateManager depend= `"bizapp-$buildPrefix-backplane-9035`"" -Wait -PassThru
+			Start-Process -FilePath $winPath -WindowStyle Hidden -ArgumentList "config BizAPP-$buildPrefix-RoleService depend= `"bizapp-$buildPrefix-backplane-2`"/`"bizapp-$buildPrefix-backplane-1`"" -Wait -PassThru
+			Start-Process -FilePath $winPath -WindowStyle Hidden -ArgumentList "config BizAPP-$buildPrefix-SessionStateManager depend= `"bizapp-$buildPrefix-backplane-1`"" -Wait -PassThru
 		}
 	}
 }

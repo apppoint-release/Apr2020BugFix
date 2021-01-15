@@ -227,20 +227,19 @@ BizAPP.SystemTray = {
 									<nav id="bt-menu" class="bt-menu bza_highlight bt-menu-close {2}">\
 										<a href="#" class="bt-menu-trigger blink" style="display:none;"><span class="bza_highlight" >Menu</span></a> \
 										<ul>\
-											<li><i class="fa fa-sign-out" title="Logout" onclick="signOutWithNoDirtyTransactionsCheck()"></i></li>\
+											<li><i class="fa fa-code bt-icon exception" title="Exception Stack"></i></li>\
+											<li><i class="fa fa-newspaper-o bt-icon message-board" title="Message Board"></i></li>\
+											<li><i class="fa fa-desktop bt-icon bza_performance" title="Performance Indicator"></i></li>\
+											<li><i class="fa fa-columns bt-icon bza_broadcast" title="Broadcast"></i></li>\
 											<li><i class="fa fa-eye " title="Enable Debug" onclick="BizAPP.SystemTray.ChangeDebugMode(this)"></i></li>\
-											<li><i class="fa fa-comments" title="Chat" onclick="BizAPP.SystemTray.InitChat();"></i></li>\
+											<li><i class="fa fa-th-large bt-icon bza_appcenter" title="Application Center"></i></li>\
 											<li><i onclick="window.open(\'Enterpriseview.aspx?html.app=ESystema47d2\')" class="fa fa-adn" title="System Administration"></i></li>\
 											<li><i onclick="window.open(\'system\/diagnostics.aspx\')" class="fa fa-cog" title="Diagnostic"></i></li>\
 										</ul>\
 										<ul>\
-											<li><i class="fa fa-th-large bt-icon bza_appcenter" title="Application Center"></i></li>\
-											<li><i class="fa fa-columns bt-icon bza_broadcast" title="Broadcast"></i></li>\
-											<li><i class="fa fa-newspaper-o bt-icon message-board" title="Message Board"></i></li>\
-											<li><i class="fa fa-desktop bt-icon bza_performance" title="Performance Indicator"></i></li>\
-											<li><i class="fa fa-code bt-icon exception" title="Exception Stack"></i></li>\
 											<li><input id="impersonatetbox" type="text" bza_qid="ESystemae76f" bza_fields="{3}" bza_valuefield="LoginID" placeholder="Impersonate..."><i class="fa fa-user" onclick="$(this).addClass(\'hide\');$(\'#impersonatetbox\').show(\'fast\').focus();" title="Impersonate"></i></li>\
 											<li><input id="translatetbox" type="text" bza_qid="ESystem33135" bza_fields="Name"  placeholder="Translate..."><i class="fa fa-globe" onclick="$(this).addClass(\'hide\');$(\'#translatetbox\').show(\'fast\').focus();" title="Switch Language"></i></li>\
+											<li><i class="fa fa-sign-out" title="Logout" onclick="signOutWithNoDirtyTransactionsCheck()"></i></li>\
 										</ul>\
 										<span class="bza_mainheader">\
 										</span>\
@@ -253,31 +252,30 @@ BizAPP.SystemTray = {
         $('body').append($(BizAPP.SystemTray._menu.format(BizAPP.UI.brandName, BizAPP.UI.brandUrl, 'left', BizAPP.UI.impersonateField)));
 
         //Enable auto complete functionality on impersonate & translate text field
-        var $imprCtrl = $('#impersonatetbox');
-        BizAPP.UI.Textbox.EnhanceAutoComplete({
-            value: $imprCtrl.attr('bza_fields'),
-            selector: '#impersonatetbox',
-            userStatus: 'false',
-            selectCallback: function (a, b) {
-                ajaxAsyncCall('ImpersonationControlEx', ['ImpersonateFromLoginId', b.item.addnData[$imprCtrl.attr('bza_valuefield')]], false, true);
-            }
-        });
-        BizAPP.UI.Textbox.EnhanceAutoComplete({
-            value: 'Name',
-            selector: '#translatetbox',
-            userStatus: 'false',
-            selectCallback: function (a, b) {
-                callObjectPickerCallBack('', b.item.identifier);
-            }
-        });
-
+		$(function() {
+			var $imprCtrl = $('#impersonatetbox');
+			BizAPP.UI.Textbox.EnhanceAutoComplete({
+				value: $imprCtrl.attr('bza_fields'),
+				selector: '#impersonatetbox',
+				userStatus: 'false',
+				selectCallback: function (a, b) {
+					ajaxAsyncCall('ImpersonationControlEx', ['ImpersonateFromLoginId', b.item.addnData[$imprCtrl.attr('bza_valuefield')]], false, true);
+				}
+			});
+			BizAPP.UI.Textbox.EnhanceAutoComplete({
+				value: 'Name',
+				selector: '#translatetbox',
+				userStatus: 'false',
+				selectCallback: function (a, b) {
+					callObjectPickerCallBack('', b.item.identifier);
+				}
+			});
+		});
+		
         //Hide diagnostics and system admin links for non sys admin users
         if (!g_hasSysAdminResp) {
 			var $st = $('.systemtray-container');
-            $st.find('.fa-cog').parent().hide();
-            $st.find('.fa-adn').parent().hide();
-            $st.find('.fa-columns').parent().hide();
-            $st.find('.fa-desktop').parent().hide();
+			$st.find('.bza_appcenter').parent().parent().find('*').remove();
         }
     },
     BlinkMenuOnLoad: function (bmt, hide) {

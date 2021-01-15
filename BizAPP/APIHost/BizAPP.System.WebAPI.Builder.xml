@@ -177,6 +177,13 @@
             <param name="assemblyOutputPath">The assembly output path.</param>
             <returns></returns>
         </member>
+        <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration.WithEnterprise(System.String)">
+            <summary>
+            Withes the enterprise.
+            </summary>
+            <param name="enterprise">The enterprise.</param>
+            <returns>PackageBuilderConfiguration.</returns>
+        </member>
         <member name="M:BizAPP.CodeGenerator.Builder.PackageBuilderConfiguration.Build">
             <summary>
             Builds this instance.
@@ -288,6 +295,12 @@
             <value>
             The hash.
             </value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Codegen.Models.Application.enterprise">
+            <summary>
+            Gets or sets the enterprise.
+            </summary>
+            <value>The enterprise.</value>
         </member>
         <member name="T:BizAPP.WebAPI.Codegen.Models.AuthorizationType">
              <summary>
