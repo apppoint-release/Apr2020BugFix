@@ -461,6 +461,11 @@
             </summary>
             <value><c>true</c> if [enable user agent validation filter]; otherwise, <c>false</c>.</value>
         </member>
+        <member name="P:BizAPP.BizAPPOptions.HostedInWebServer">
+            <summary>
+            Hosted in web server, this is used by bizapp to decide on the licensing and other services.
+            </summary>
+        </member>
         <member name="T:BizAPP.BizAPPTenantOptions">
              <summary>
             

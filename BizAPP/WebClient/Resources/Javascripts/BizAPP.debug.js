@@ -11061,6 +11061,32 @@ BizAPP.Session = {
 					return result;
 				});
 	},
+	//BizAPP.Session.GetProcessOperations({contextIdentifier:'a:b:-1', excpAsResp: false})
+    GetProcessOperations: function (options) {
+		if (!options.contextIdentifier)
+			return null;
+
+        options = options || { contextIdentifier: '', callback: function (result) { return result; }, excpAsResp: false };
+		if (!options.excpAsResp) options.excpAsResp = false;
+
+		g_readOnly = true;
+        var args = ['GetProcessOperations', options.contextIdentifier, options.excpAsResp];
+
+		if (options.sync)
+			return ajaxSyncCallAndNoResponseHandler('HelperEx', args);
+		else
+			realAjaxAsyncCall('HelperEx', getNextRequestId(), args, false,
+				function (data, textStatus, jqXHR) {
+					var response = BizAPP.UI._handleEventsAndExceptions(data, textStatus, jqXHR);
+					if (response[1])
+						var result = JSON.parse(response[1]);
+
+					if (options.callback)
+						options.callback(result, data);
+
+					return result;
+				});
+	},
 	//BizAPP.Session.InvokeStaticMethod({ type: 'SystemUnit.SystemModule.Attachment', method: 'Upload', args: [], passSession:'true/false', callback: function(){...} })
 	InvokeStaticMethod: function (options) {
 		g_callBacks.push(options.callback);
