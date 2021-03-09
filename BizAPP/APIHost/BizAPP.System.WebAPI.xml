@@ -25,12 +25,23 @@
             <param name="jWTOptions">The j wt options.</param>
             <param name="loggerFactory">The logger factory.</param>
         </member>
-        <member name="M:BizAPP.WebAPI.Host.AccountController.Login(BizAPP.Services.ISignInManager,BizAPP.WebAPI.LoginModel)">
+        <member name="M:BizAPP.WebAPI.Host.AccountController.Login(BizAPP.Services.ISignInManager,Microsoft.AspNetCore.Identity.UserManager{Identity.BizAPP.User},BizAPP.Services.IQueryExecutionService,BizAPP.WebAPI.LoginModel)">
             <summary>
             Login
             </summary>
+            <param name="qes"></param>
+            <param name="userManager"></param>
             <param name="signIn">The sign in.</param>
             <param name="loginModel">The lm.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.AccountController.RefreshToken(Microsoft.AspNetCore.Identity.UserManager{Identity.BizAPP.User},BizAPP.Services.IQueryExecutionService,BizAPP.WebAPI.RefreshTokenModel)">
+            <summary>
+            Refreshes the token
+            </summary>
+            <param name="userManager">The sign in.</param>
+            <param name="qes"></param>
+            <param name="refreshTokenModel">The lm.</param>
             <returns></returns>
         </member>
         <member name="M:BizAPP.WebAPI.Host.AccountController.GetCurrentUserInfo(Microsoft.AspNetCore.Identity.UserManager{Identity.BizAPP.User})">
@@ -39,6 +50,48 @@
             </summary>
             <param name="userManager">The user manager.</param>
             <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.AccountController.GenerateOTPForCurrentUser(BizAPP.Services.ISessionServiceWrapperService)">
+            <summary>
+            Generates the otp for the current user.
+            </summary>
+            <param name="sessionServiceWrapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.AccountController.GenerateOTPUrlForCurrentUser(BizAPP.Services.ISessionServiceWrapperService,System.String)">
+            <summary>
+            Generates the otp url 
+            </summary>
+            <param name="sessionServiceWrapper"></param>
+            <param name="baseUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.AccountController.GetOtpForCurrentUser(BizAPP.Services.ISessionServiceWrapperService,System.Func{System.String,System.String})">
+            <summary>
+            Gets the otp for the current user
+            </summary>
+            <param name="sessionServiceWrapper"></param>
+            <param name="otpCallback"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.Host.AccountController.GetOrCreateRefreshToken(BizAPP.Services.IQueryExecutionService,Identity.BizAPP.User,System.String)">
+            <summary>
+            Gets the or create token asynchronous.
+            </summary>
+            <param name="qes"></param>
+            <param name="appUser">The application user.</param>
+            <param name="remoteName">The remoteip.</param>
+            <returns>Task&lt;UserToken&gt;.</returns>
+        </member>
+        <member name="F:BizAPP.WebAPI.Host.AccountController.GETREFRESHTOKEN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BizAPP.WebAPI.Host.AccountController.INSERTREFRESHTOKEN">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:BizAPP.WebAPI.Host.AccountController.LoginResult">
             <summary>
@@ -51,7 +104,36 @@
             </summary>
             <value>The access token.</value>
         </member>
+        <member name="P:BizAPP.WebAPI.Host.AccountController.LoginResult.refresh_token">
+            <summary>
+            Gets or sets the refresh token.
+            </summary>
+            <value>The access token.</value>
+        </member>
         <member name="P:BizAPP.WebAPI.Host.AccountController.LoginResult.expires_in">
+            <summary>
+            Gets or sets the expires in.
+            </summary>
+            <value>The expires in.</value>
+        </member>
+        <member name="T:BizAPP.WebAPI.Host.AccountController.RefreshTokenResult">
+            <summary>
+            Class RefreshTokenResult.
+            </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.AccountController.RefreshTokenResult.access_token">
+            <summary>
+            Gets or sets the access token.
+            </summary>
+            <value>The access token.</value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.AccountController.RefreshTokenResult.refresh_token">
+            <summary>
+            Gets or sets the refresh token.
+            </summary>
+            <value>The refresh token.</value>
+        </member>
+        <member name="P:BizAPP.WebAPI.Host.AccountController.RefreshTokenResult.expires_in">
             <summary>
             Gets or sets the expires in.
             </summary>
@@ -201,6 +283,131 @@
             <param name="eid">The eid.</param>
             <returns></returns>
         </member>
+        <member name="T:BizAPP.Controllers.CurrencyController">
+            <summary>
+            Class CurrencyController.
+            Implements the <see cref="T:BizAPP.WebAPI.ControllerBaseEx" />
+            </summary>
+            <seealso cref="T:BizAPP.WebAPI.ControllerBaseEx" />
+        </member>
+        <member name="M:BizAPP.Controllers.CurrencyController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Controllers.CurrencyController"/> class.
+            </summary>
+            <param name="loggerFactory">The logger factory.</param>
+        </member>
+        <member name="M:BizAPP.Controllers.CurrencyController.GetCurrencyByISOCode(BizAPP.Services.ISessionServiceWrapperService,System.String)">
+            <summary>
+            Gets the currency by iso code.
+            </summary>
+            <param name="sessionServiceWrapper">The session service wrapper.</param>
+            <param name="currencyISOCode">The currency iso code.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:BizAPP.Controllers.CurrencyController.GetCurrencies(BizAPP.Services.ISessionServiceWrapperService)">
+            <summary>
+            Gets the currencies.
+            </summary>
+            <param name="sessionServiceWrapper">The session service wrapper.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:BizAPP.Controllers.CurrencyController.GetCurrencyConversionFactorByISOCode(BizAPP.Services.ISessionServiceWrapperService,System.String)">
+            <summary>
+            Gets the currency conversion factor by iso code.
+            </summary>
+            <param name="sessionServiceWrapper">The session service wrapper.</param>
+            <param name="currencyISOCode">The currency iso code.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="T:BizAPP.Controllers.PicklistController">
+            <summary>
+            Class PicklistController. This class cannot be inherited.
+            Implements the <see cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="M:BizAPP.Controllers.PicklistController.#ctor(Microsoft.Extensions.Logging.ILoggerFactory,Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BizAPP.Controllers.PicklistController"/> class.
+            </summary>
+            <param name="loggerFactory">The logger factory.</param>
+            <param name="cache">The cache.</param>
+        </member>
+        <member name="M:BizAPP.Controllers.PicklistController.GetPicklistItems(BizAPP.Services.IQueryExecutionService,System.String)">
+            <summary>
+            Gets the picklist items.
+            </summary>
+            <param name="qes">The qes.</param>
+            <param name="picklistName">Name of the picklist.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:BizAPP.Controllers.PicklistController.GetCountry(BizAPP.Services.IQueryExecutionService,System.String,System.String)">
+            <summary>
+            Gets the country.
+            </summary>
+            <param name="qes">The qes.</param>
+            <param name="countryCodeOrName">Name of the country code or.</param>
+            <param name="flagSize">Size of the flag.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:BizAPP.Controllers.PicklistController.GetCountries(BizAPP.Services.IQueryExecutionService,System.String)">
+            <summary>
+            Gets the countries.
+            </summary>
+            <param name="qes">The qes.</param>
+            <param name="flagSize">Size of the flag.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="F:BizAPP.Controllers.PicklistController.m_picklistItemQuery">
+            <summary>
+            The m picklist item query
+            </summary>
+        </member>
+        <member name="F:BizAPP.Controllers.PicklistController.m_picklistItemQuery2">
+            <summary>
+            The m picklist item query2
+            </summary>
+        </member>
+        <member name="T:BizAPP.Models.Country">
+            <summary>
+            Class Country.
+            </summary>
+        </member>
+        <member name="P:BizAPP.Models.Country.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>The code.</value>
+        </member>
+        <member name="P:BizAPP.Models.Country.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:BizAPP.Models.Country.FlagUrl">
+            <summary>
+            Gets or sets the flag URL.
+            </summary>
+            <value>The flag URL.</value>
+        </member>
+        <member name="T:BizAPP.Models.PicklistItem">
+            <summary>
+            Class PicklistItem.
+            </summary>
+        </member>
+        <member name="P:BizAPP.Models.PicklistItem.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="P:BizAPP.Models.PicklistItem.DisplayValue">
+            <summary>
+            Gets or sets the display value.
+            </summary>
+            <value>The display value.</value>
+        </member>
         <member name="T:BizAPP.ControllerExtensions">
             <summary>
             Class ControllerExtensions.
@@ -230,13 +437,14 @@
             <param name="json">The json.</param>
             <returns></returns>
         </member>
-        <member name="M:BizAPP.ControllerExtensions.ServerError(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object)">
+        <member name="M:BizAPP.ControllerExtensions.ServerError(Microsoft.AspNetCore.Mvc.ControllerBase,System.Object,System.Nullable{System.Int32})">
             <summary>
             Servers the error.
             </summary>
             <param name="context">The context.</param>
             <param name="json">The json.</param>
-            <returns></returns>
+            <param name="statusCode">The status code.</param>
+            <returns>ActionResult.</returns>
         </member>
         <member name="T:BizAPP.Utils.TokenUtils">
             <summary>
@@ -256,6 +464,15 @@
             <param name="jwtOptions">The JWT options.</param>
             <param name="claims">The claims.</param>
             <returns>Task&lt;System.ValueTuple&lt;System.String, DateTime&gt;&gt;.</returns>
+        </member>
+        <member name="M:BizAPP.Utils.TokenUtils.GetPrincipalFromExpiredToken(BizAPP.WebAPI.JWTOptions,System.String)">
+            <summary>
+            Gets the principal from expired token.
+            </summary>
+            <param name="jwtOptions">The JWT options.</param>
+            <param name="token">The token.</param>
+            <returns>ClaimsPrincipal.</returns>
+            <exception cref="T:Microsoft.IdentityModel.Tokens.SecurityTokenException">Invalid token</exception>
         </member>
     </members>
 </doc>

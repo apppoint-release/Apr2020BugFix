@@ -441,6 +441,12 @@
             The tenancy.
             </value>
         </member>
+        <member name="P:BizAPP.BizAPPOptions.EnterpriseWhiteListedIps">
+            <summary>
+            Gets or sets the enterprise white listed ips.
+            </summary>
+            <value>The enterprise white listed ips.</value>
+        </member>
         <member name="P:BizAPP.BizAPPOptions.AdditionalLookupDirectories">
             <summary>
             Gets or sets the additional lookup directories.
@@ -466,6 +472,12 @@
             Hosted in web server, this is used by bizapp to decide on the licensing and other services.
             </summary>
         </member>
+        <member name="P:BizAPP.BizAPPOptions.RedisResponseCacheConfiguration">
+            <summary>
+            Gets or sets the redis response cache configuration.
+            </summary>
+            <value>The redis response cache configuration.</value>
+        </member>
         <member name="T:BizAPP.BizAPPTenantOptions">
              <summary>
             
@@ -478,6 +490,17 @@
             <value>
             The tenancy ignore domain segments.
             </value>
+        </member>
+        <member name="T:BizAPP.EnterpriseWhitelistIPOptions">
+            <summary>
+            Class EnterpriseWhitelistIPOptions.
+            </summary>
+        </member>
+        <member name="P:BizAPP.EnterpriseWhitelistIPOptions.WhiteListedIPAddresses">
+            <summary>
+            Gets or sets the tenancy ignore domain segments.
+            </summary>
+            <value>The tenancy ignore domain segments.</value>
         </member>
     </members>
 </doc>

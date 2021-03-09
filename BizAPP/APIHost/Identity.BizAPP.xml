@@ -164,11 +164,12 @@
             Class ClaimUtils.
             </summary>
         </member>
-        <member name="M:BizAPP.Utils.ClaimUtils.GetClaims(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
+        <member name="M:BizAPP.Utils.ClaimUtils.GetClaims(Microsoft.Extensions.Logging.ILogger,System.String,System.String,System.String,System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.String})">
             <summary>
             Gets the user claims.
             </summary>
             <param name="logger">The logger.</param>
+            <param name="loginId">The user loginid.</param>
             <param name="userId">The user identifier.</param>
             <param name="userEmail">The user email.</param>
             <param name="issuperuser">if set to <c>true</c> [issuperuser].</param>

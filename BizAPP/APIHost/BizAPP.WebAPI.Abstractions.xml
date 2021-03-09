@@ -10,6 +10,11 @@
             </summary>
             <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
         </member>
+        <member name="F:BizAPP.WebAPI.ControllerBaseEx._cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
         <member name="F:BizAPP.WebAPI.ControllerBaseEx._logger">
             <summary>
             The logger
@@ -39,6 +44,89 @@
             <param name="queryid">The queryid.</param>
             <param name="parameters">The parameters.</param>
             <returns></returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.AddToCacheAsync(System.String,System.Object,System.Nullable{System.TimeSpan})">
+            <summary>
+            Adds to cache.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="slidingTimeout">The sliding timeout.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.RemoveFromCacheAsync(System.String)">
+            <summary>
+            Removes from cache asynchronous.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>System.Threading.Tasks.Task.</returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.FlushCacheAsync">
+            <summary>
+            Removes all from cache.
+            </summary>
+            <returns>System.Threading.Tasks.Task.</returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.FlushCache">
+            <summary>
+            Flushes the cache.
+            </summary>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.RemoveFromCache(System.String)">
+            <summary>
+            Removes from cache.
+            </summary>
+            <param name="key">The key.</param>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.AddToCache(System.String,System.Object,System.Nullable{System.TimeSpan})">
+            <summary>
+            Adds to cache.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="slidingTimeout">The sliding timeout.</param>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.GetOrAddToCacheAsync``1(System.String,System.Func{System.Threading.Tasks.Task{``0}},System.Nullable{System.TimeSpan})">
+            <summary>
+            Gets the or add to cache asynchronous.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <param name="callback">The callback.</param>
+            <param name="slidingTimeout">The sliding timeout.</param>
+            <returns>System.Threading.Tasks.Task&lt;T&gt;.</returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.SerializeToBytes(System.Object)">
+            <summary>
+            Serializes to bytes.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.Deserialize``1(System.String,System.Byte[])">
+            <summary>
+            Deserializes the specified key.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <param name="bytes">The bytes.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:BizAPP.WebAPI.ControllerBaseEx.GetOrAddToCache``1(System.String,System.Func{``0},System.Nullable{System.TimeSpan})">
+            <summary>
+            Gets the or add to cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key">The key.</param>
+            <param name="callback">The callback.</param>
+            <param name="slidingTimeout">The sliding timeout.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="P:BizAPP.WebAPI.ControllerBaseEx.UserUniqueId">
+            <summary>
+            Gets the user unique identifier.
+            </summary>
+            <value>The user unique identifier.</value>
         </member>
         <member name="T:BizAPP.WebAPI.AuthorizeResponsibilitiesAttribute">
              <summary>
@@ -126,6 +214,65 @@
             Gets or sets the password.
             </summary>
             <value>The password.</value>
+        </member>
+        <member name="P:BizAPP.WebAPI.LoginModel.RemoteName">
+            <summary>
+            Gets or sets the remotename.
+            </summary>
+            <value>The remotename.</value>
+        </member>
+        <member name="T:BizAPP.WebAPI.RefreshTokenModel">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.RefreshTokenModel.refresh_token">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.RefreshTokenModel.access_token">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:BizAPP.WebAPI.RefreshTokenModel.remotename">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:BizAPP.Filters.ClientIPAddressActionFilter">
+            <summary>
+            Class ClientIPAddressActionFilter. This class cannot be inherited.
+            Implements the <see cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute" />
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionFilterAttribute" />
+        </member>
+        <member name="M:BizAPP.Filters.ClientIPAddressActionFilter.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.Dictionary{System.String,System.String[]},Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            ctor
+            </summary>
+            <param name="services">The services.</param>
+            <param name="enterpriseIPList">The safelist.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="M:BizAPP.Filters.ClientIPAddressActionFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            On action execution.
+            </summary>
+            <param name="context">The context.</param>
+            <inheritdoc />
+        </member>
+        <member name="F:BizAPP.Filters.ClientIPAddressActionFilter._services">
+            <summary>
+            The services
+            </summary>
+        </member>
+        <member name="F:BizAPP.Filters.ClientIPAddressActionFilter._logger">
+            <summary>
+            The logger
+            </summary>
+        </member>
+        <member name="F:BizAPP.Filters.ClientIPAddressActionFilter._enterpriseIPList">
+            <summary>
+            The safelist
+            </summary>
         </member>
         <member name="T:BizAPP.Filters.UserAgentFilterAttribute">
             <summary>

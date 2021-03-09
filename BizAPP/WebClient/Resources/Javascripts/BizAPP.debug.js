@@ -3840,7 +3840,10 @@ function callApplySelectedQuery1(control, chc) {
 	if (control)
 		callGrid(['ApplySelectedQuery', chc, '', control.getAttribute("queryenterpriseid")]);
 }
-function callGridCount(src, context) {
+function callGridCount(event, src, context) {
+    if (window.event !== event) {
+        window.event = event;
+    }
 	if (!src || src == undefined)
 		src = "OptGridEx"
 
@@ -4214,7 +4217,10 @@ function callFilter(context, controlName) {
 
 	callRefreshGridOnFilter(context, "1", recordsCount, getFilter(controlName), "false", "", controlName);
 }
-function callChangePage(context, controlName, pageNum, recordCount) {
+function callChangePage(event, context, controlName, pageNum, recordCount) {
+    if (window.event !== event) {
+        window.event = event;
+    }
 	//call filter only when grid is not in inline edit mode
 	var grid = getElementByBizAPPId(controlName, 'DIV');
 	if (grid && getBizAppElementsByClassName(grid, 'DIV', 'gCancel').length != 0)
@@ -4239,6 +4245,9 @@ function callRefreshReload(context, controlName) {
 	callRefreshGrid(context, "-1", "-1", "", "true", "", controlName);
 }
 function callSort(event, context, controlName, pageNumId, recordsPerPageListId) {
+    if (window.event !== event) {
+        window.event = event;
+    }
 	var source = getSourceElement(event);
 	if (source.nodeName.toLowerCase() !== 'th')
 		source = $(source).closest('.bza-filter-block').closest('th');
@@ -4270,24 +4279,27 @@ function callSort(event, context, controlName, pageNumId, recordsPerPageListId) 
 
 	callRefreshGrid(context, pageNum, recordCount, getFilter(controlName), "false", columnName, controlName);
 }
-function callPage(context, ctrlName, func) {
+function callPage(event, context, ctrlName, func) {
+    if (window.event !== event) {
+        window.event = event;
+    }
 	//if commit throws any error do not proceed
 	if (commitEditableGrids() != true)
 		return;
 
 	callGrid([func, context, bza_getSize(ctrlName)]);
 }
-function callNextPage(context, controlName) {
-	callPage(context, controlName, 'MoveNextPage');
+function callNextPage(event,context, controlName) {
+    callPage(event,context, controlName, 'MoveNextPage');
 }
-function callPreviousPage(context, controlName) {
-	callPage(context, controlName, 'MovePreviousPage');
+function callPreviousPage(event,context, controlName) {
+    callPage(event,ontext, controlName, 'MovePreviousPage');
 }
-function callLastPage(context, controlName) {
-	callPage(context, controlName, 'MoveLastPage');
+function callLastPage(event,context, controlName) {
+    callPage(event,context, controlName, 'MoveLastPage');
 }
-function callFirstPage(context, controlName) {
-	callPage(context, controlName, 'MoveFirstPage');
+function callFirstPage(event,context, controlName) {
+    callPage(event,context, controlName, 'MoveFirstPage');
 }
 
 function callGrid(ajaxArgs) {
