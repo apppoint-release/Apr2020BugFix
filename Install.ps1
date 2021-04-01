@@ -1,19 +1,36 @@
 <#
   BizAPP Install scripts. It helps to install app server or web server components and configures them.
 #>
+param([bool]$silentInstall=$false) 
+
 Import-Module WebAdministration
 
 function Extract-Installer( $msiFile, $destFolder )
 {
+	$IsError = $false
     if( !$msiFile )
     {
-        $msiFile = Read-Host "Please enter the path to BizAPP MSI file"
+		if( $silentInstall )
+		{
+			$IsError = $true
+		}
+		else
+		{
+			$msiFile = Read-Host "Please enter the path to BizAPP MSI file"
+		}
     }
     if( !$destFolder )
     {
-        $destFolder = Read-Host "Please enter the destination install folder. For e.g(D:\Program Files\BizAPP)"
+		if( $silentInstall )
+		{
+			$IsError = $true
+		}
+		else
+		{
+			$destFolder = Read-Host "Please enter the destination install folder. For e.g(D:\Program Files\BizAPP)"
+		}
     }
-    if( !$msiFile -or !$destFolder )
+    if( $IsError )
     {
         Write-Error "One or more arguments was not specified"
 	    Exit -1
@@ -47,17 +64,70 @@ function Extract-Installer( $msiFile, $destFolder )
     } 
 }
 
+function ChooseInstall-NGenAssemblies( $installPath )
+{
+	$choice = "Y"
+	if( !$silentInstall )
+	{
+		$choice = Read-Host "Do you want to NGen assemblies?.(Y/N)"
+	}
+    switch -Regex ( $choice )
+	{
+		"Y"
+		{
+			Install-NGenAssemblies $installPath "install"
+		}
+	}
+}
+
+function ChooseSetUp-IIS( $InstallPath )
+{
+	$choice = "N"
+	if( !$silentInstall )
+	{
+		$choice = Read-Host "Do you want to setup IIS to use another user account?.(Y/N)"
+	}
+    switch -Regex ( $choice )
+    {
+        "Y"
+        {
+            $user = Read-Host "Enter user name"
+			$pwd = Read-Host "Enter user password"
+			
+            if( !$user -or !$pwd )
+            {
+                Write-Error "User name or password was not entered correctly"
+                Exit -1
+            }
+            echo "Setting up IIS"
+            Setup-IIS $installPath $user $pwd
+        }
+		"N"
+		{
+			Setup-IIS $installPath $null $null
+		}
+    }
+}
+
 function Install-Services( $installPath, $serviceUser, $serviceUserPwd )
 {
+	$IsError = $false
     if( !$installPath )
     {
         $installPath = $env:BizAPPInstallPath
         if( !$installPath )
         {
-           $installPath = Read-Host "Please enter the BizAPP install folder. For e.g(D:\Program Files\BizAPP)"
+			if( $silentInstall )
+			{
+				$IsError = $true
+			}
+			else
+			{
+				$installPath = Read-Host "Please enter the BizAPP install folder. For e.g(D:\Program Files\BizAPP)"
+			}
         }
     }
-    if( !$installPath )
+    if( $IsError )
     {
         Write-Error "Install path was not specified"
         Exit -1
@@ -79,7 +149,11 @@ function Install-Services( $installPath, $serviceUser, $serviceUserPwd )
 	Install-WinService $installPath "BizAPP.AsyncServices.Host.exe" "BizAPP-$buildPrefix-AsyncService.Host" "BizAPP-$buildPrefix-AsyncService.Host" $serviceUser $serviceUserPwd
 	
 	# setup service dependencies if redis is required.
-	$choice = Read-Host "Do you use local redis services?.(Y/N)"
+	$choice = "Y"
+	if( !$silentInstall )
+	{
+		$choice = Read-Host "Do you use local redis services?.(Y/N)"
+	}
     switch -Regex ( $choice )
 	{
 		"Y"
@@ -276,7 +350,11 @@ function Setup-AppServer( $installPath )
 	$toolsPath = Join-Path $installPath "Tools\PreFetchAssemblyList.exe"
 	Start-Process -FilePath $toolsPath -ArgumentList "silent `"$installPath`"" -Wait -PassThru
 	
-	$choice = Read-Host "Do you want to setup services to use another user account?.(Y/N)"
+	$choice = "N"
+	if( !$silentInstall )
+	{
+		$choice = Read-Host "Do you want to setup services to use another user account?.(Y/N)"
+	}
     switch -Regex ( $choice )
     {
         "Y"
@@ -301,50 +379,17 @@ function Setup-AppServer( $installPath )
 	Add-PowershellRegistryKeys $installPath
 	
 	# install ngen assemblies.
-	$choice = Read-Host "Do you want to NGen assemblies?.(Y/N)"
-    switch -Regex ( $choice )
-	{
-		"Y"
-		{
-			Install-NGenAssemblies $installPath "install"
-		}
-	}
+	ChooseInstall-NGenAssemblies $installPath
 }
 
 function Setup-WebServer( $installPath )
 {
 	Install-GacAssemblies $installPath
-		
-	$choice = Read-Host "Do you want to setup IIS to use another user account?.(Y/N)"
-    switch -Regex ( $choice )
-    {
-        "Y"
-        {
-            $user = Read-Host "Enter user name"
-			$pwd = Read-Host "Enter user password"
-			
-            if( !$user -or !$pwd )
-            {
-                Write-Error "User name or password was not entered correctly"
-                Exit -1
-            }
-            echo "Setting up IIS"
-            Setup-IIS $installPath $user $pwd
-        }
-		"N"
-		{
-			Setup-IIS $installPath $null $null
-		}
-    }
+	
+	ChooseSetUp-IIS $installPath
+	
 	# install ngen assemblies.
-	$choice = Read-Host "Do you want to NGen assemblies?.(Y/N)"
-    switch -Regex ( $choice )
-	{
-		"Y"
-		{
-			Install-NGenAssemblies $installPath "install"
-		}
-	}
+	ChooseInstall-NGenAssemblies $installPath	
 }
 
 function Setup-Prerequisites( $installPath )
@@ -354,7 +399,11 @@ function Setup-Prerequisites( $installPath )
 	$toolsPath = Join-Path $installPath "Tools\PreFetchAssemblyList.exe"
 	Start-Process -FilePath $toolsPath -ArgumentList "silent `"$installPath`"" -Wait -PassThru
 	
-    $choice = Read-Host "Do you want to setup services/IIS to use another user account?.(Y/N)"
+	$choice = "N"
+	if( !$silentInstall )
+	{
+		$choice = Read-Host "Do you want to setup services/IIS to use another user account?.(Y/N)"
+	}
     switch -Regex ( $choice )
     {
         "Y"
@@ -389,14 +438,7 @@ function Setup-Prerequisites( $installPath )
 	Add-PowershellRegistryKeys $installPath
 	
 	# install ngen assemblies.
-	$choice = Read-Host "Do you want to NGen assemblies?.(Y/N)"
-    switch -Regex ( $choice )
-	{
-		"Y"
-		{
-			Install-NGenAssemblies $installPath "install"
-		}
-	}
+	ChooseInstall-NGenAssemblies $installPath
 }
 
 function Install-NGenAssemblies( [ValidateNotNullorEmpty()][string]$installPath, $cmd )
@@ -514,3 +556,4 @@ Setup-Prerequisites $installPath
 
 # setup web srvr
 #Setup-WebServer $installPath
+
