@@ -10,6 +10,11 @@
             </summary>
             <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
         </member>
+        <member name="F:BizAPP.WebAPI.ControllerBaseEx._provider">
+            <summary>
+            Service provider
+            </summary>
+        </member>
         <member name="F:BizAPP.WebAPI.ControllerBaseEx._cache">
             <summary>
             The cache

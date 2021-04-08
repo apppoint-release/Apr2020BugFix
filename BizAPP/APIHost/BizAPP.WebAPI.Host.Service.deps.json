@@ -2907,7 +2907,8 @@
           "Microsoft.Extensions.DependencyInjection": "3.1.5",
           "Microsoft.Extensions.Logging": "3.1.5",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.5",
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "StackExchange.Redis": "2.0.593"
         },
         "compile": {
           "BizAPP.WebAPI.Abstractions.dll": {}
@@ -5191,7 +5192,8 @@
           "Microsoft.Extensions.DependencyInjection": "3.1.5",
           "Microsoft.Extensions.Logging": "3.1.5",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.5",
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "StackExchange.Redis": "2.0.593"
         },
         "runtime": {
           "BizAPP.WebAPI.Abstractions.dll": {}
@@ -5246,6 +5248,16 @@
         },
         "runtime": {
           "Identity.BizAPP.dll": {}
+        }
+      },
+      "BizAPP.Common.Redis.SS/1.1.0.37": {
+        "runtime": {
+          "BizAPP.Common.Redis.SS.dll": {}
+        }
+      },
+      "BizAPP.Common.Redis/1.1.0.37": {
+        "runtime": {
+          "BizAPP.Common.Redis.dll": {}
         }
       }
     }
@@ -6964,6 +6976,16 @@
     },
     "Identity.BizAPP/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BizAPP.Common.Redis.SS/1.1.0.37": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BizAPP.Common.Redis/1.1.0.37": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
